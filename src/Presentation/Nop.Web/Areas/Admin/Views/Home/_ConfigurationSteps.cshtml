@@ -1,0 +1,224 @@
+﻿@inject Nop.Services.Stores.IStoreService storeService
+@inject Nop.Services.Common.IGenericAttributeService genericAttributeService
+@inject IWorkContext workContext
+
+@{
+  const string cardId = "configuration-steps-card";
+  const string hideCardAttributeName = "ConfigurationSteps";
+  var hideCard = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideCardAttributeName);
+
+  var defaultStoreId = (await storeService.GetAllStoresAsync()).FirstOrDefault()?.Id ?? 0;
+}
+
+<div class="card card-primary card-outline configuration-steps @if (hideCard){<text>collapsed-card</text>}" id="@cardId">
+    <div class="card-header with-border">
+        <h3 class="card-title">
+            <i class="fa fa-star-o"></i>
+            Start accepting orders
+        </h3>
+        <div class="card-tools pull-right">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                @if (hideCard)
+                {
+                    <text><i class="fa fa-plus"></i></text>
+                }
+                else
+                {
+                    <text><i class="fa fa-minus"></i></text>
+                }
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <text><i class="fa fa-times"></i></text>
+            </button>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#@cardId').on('click', 'button[data-card-widget="collapse"]', function () {
+                var collapsed = !$('#@cardId').hasClass('collapsed-card');
+                saveUserPreferences('@(Url.Action("SavePreference", "Preferences"))', '@hideCardAttributeName', collapsed);
+            });
+        });
+    </script>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <h4>Welcome to your store!</h4>
+            </div>
+            <p class="intro text-center">
+                Can't wait to start accepting orders? Let us show you how to set up your store fast and easy. The steps below describe the most important settings for the online shop. With our tips on each page you will see how clear this process is. You will be ready to start selling immediately after you go through these steps. So good luck!
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <a class="configuration-step-link theme-step" asp-action="GeneralCommon" asp-controller="Setting">
+                            <div class="row">
+                                <div class="col-12 col-xl-3">
+                                    <div class="configuration-step-icon">
+                                        <i class="fa fa-pencil"></i>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-9">
+                                    <h5>
+                                        1. &nbsp; Personalize your store
+                                        <small class="text-muted">Choose a beautiful theme for your store and add your logo</small>
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-4">
+                        <a class="configuration-step-link store-info-step" asp-action="Edit" asp-controller="Store" asp-route-id="@defaultStoreId">
+                            <div class="row">
+                                <div class="col-12 col-xl-3">
+                                    <div class="configuration-step-icon">
+                                        <i class="fa fa-globe"></i>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-9">
+                                    <h5>
+                                        2. &nbsp; Add your store info
+                                        <small class="text-muted">Enter your store details and protect your customers using SSL</small>
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-4">
+                        <a class="configuration-step-link shipping-step" asp-action="Providers" asp-controller="Shipping">
+                            <div class="row">
+                                <div class="col-12 col-xl-3">
+                                    <div class="configuration-step-icon">
+                                        <i class="fa fa-truck"></i>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-9">
+                                    <h5>
+                                        3. &nbsp; Set up shipping
+                                        <small class="text-muted">Set up shipping methods to deliver orders to customers</small>
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <a class="configuration-step-link payments-step" asp-action="Methods" asp-controller="Payment">
+                            <div class="row">
+                                <div class="col-12 col-xl-3">
+                                    <div class="configuration-step-icon">
+                                        <i class="fa fa-credit-card-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-9">
+                                    <h5>
+                                        4. &nbsp; Set up payments
+                                        <small class="text-muted">Choose how your customers will pay for their orders</small>
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-4">
+                        <a class="configuration-step-link taxes-step" asp-action="Providers" asp-controller="Tax">
+                            <div class="row">
+                                <div class="col-12 col-xl-3">
+                                    <div class="configuration-step-icon">
+                                        <i class="fa fa-percent"></i>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-9">
+                                    <h5>
+                                        5. &nbsp; Set up taxes
+                                        <small class="text-muted">Configure rates manually or choose a tax service to automate all tax things</small>
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-4">
+                        <a class="configuration-step-link products-step" asp-action="Create" asp-controller="Product">
+                            <div class="row">
+                                <div class="col-12 col-xl-3">
+                                    <div class="configuration-step-icon">
+                                        <i class="fa fa-shopping-cart "></i>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-9">
+                                    <h5>
+                                        6. &nbsp; Create products
+                                        <small class="text-muted">Build a catalog with attractive product descriptions and pictures</small>
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-4">
+                        <a class="configuration-step-link email-step" asp-action="List" asp-controller="EmailAccount">
+                            <div class="row">
+                                <div class="col-12 col-xl-3">
+                                    <div class="configuration-step-icon">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-9">
+                                    <h5>
+                                        7. &nbsp; Set up email accounts
+                                        <small class="text-muted">It allows you to send notifications to your customers</small>
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-4">
+                        <a class="configuration-step-link service-step" asp-action="List" asp-controller="Topic">
+                            <div class="row">
+                                <div class="col-12 col-xl-3">
+                                    <div class="configuration-step-icon">
+                                        <i class="fa fa-info"></i>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-9">
+                                    <h5>
+                                        8. &nbsp; Edit services info
+                                        <small class="text-muted">Add info pages describing shipping, return policy and more</small>
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-4">
+                        <a class="configuration-step-link copyright-step" href="https://www.nopcommerce.com/nopcommerce-copyright-removal-key" target="_blank">
+                            <div class="row">
+                                <div class="col-12 col-xl-3">
+                                    <div class="configuration-step-icon">
+                                        <i class="fa fa-copyright"></i>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-9">
+                                    <h5>
+                                        9. &nbsp; "Powered by" link
+                                        <small class="text-muted">Remove the "Powered by nopCommerce" link from the footer</small>
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

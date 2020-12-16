@@ -1,15 +1,20 @@
 @model TopicSearchModel
 
 @{
-    //page title
-    ViewBag.PageTitle = T("Admin.ContentManagement.Topics").Text;
-    //active menu item (system name)
-    Html.SetActiveMenuItemSystemName("Topics");
+  //page title
+  ViewBag.PageTitle = T("Admin.ContentManagement.Topics").Text;
+  //active menu item (system name)
+  Html.SetActiveMenuItemSystemName("Topics");
+
+  Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
+  Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+  Html.AppendScriptParts("~/js/admintour/admin.tour.topiclist.js");
+
 }
 
 @{
-    const string hideSearchBlockAttributeName = "TopicsPage.HideSearchBlock";
-    var hideSearchBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideSearchBlockAttributeName);
+  const string hideSearchBlockAttributeName = "TopicsPage.HideSearchBlock";
+  var hideSearchBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideSearchBlockAttributeName);
 }
 
 <div class="content-header clearfix">
@@ -71,10 +76,11 @@
             </div>
 
             <div class="card card-default">
-                <div class="card-body">
+                <div class="card-body" id="topics-area">
                     @await Html.PartialAsync("Table", new DataTablesModel
                     {
                         Name = "topics-grid",
+                        RowIdBasedOnField = nameof(TopicModel.TopicName),
                         UrlRead = new DataUrl("List", "Topic", null),
                         SearchButtonId = "search-topics",
                         Length = Model.PageSize,
@@ -122,7 +128,7 @@
                             {
                                 Title = T("Admin.ContentManagement.Topics.Fields.IncludeInFooterColumn1").Text,
                                 Width = "150",
-                                ClassName = NopColumnClassDefaults.CenterAll,
+                                ClassName = NopColumnClassDefaults.CenterAll + " column-footer-column1",
                                 Render = new RenderBoolean()
                             },
                             new ColumnProperty(nameof(TopicModel.IncludeInFooterColumn2))
@@ -149,7 +155,7 @@
                             {
                                 Title = T("Admin.Common.Edit").Text,
                                 Width = "100",
-                                ClassName = NopColumnClassDefaults.Button,
+                                ClassName = NopColumnClassDefaults.Button + " column-edit",
                                 Render = new RenderButtonEdit(new DataUrl("Edit"))
                             }
                         }

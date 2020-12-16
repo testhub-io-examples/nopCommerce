@@ -1,10 +1,14 @@
 @model ProductModel
 
 @{
-    //page title
-    ViewBag.PageTitle = T("Admin.Catalog.Products.AddNew").Text;
-    //active menu item (system name)
-    Html.SetActiveMenuItemSystemName("Products");
+  //page title
+  ViewBag.PageTitle = T("Admin.Catalog.Products.AddNew").Text;
+  //active menu item (system name)
+  Html.SetActiveMenuItemSystemName("Products");
+
+  Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
+  Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+  Html.AppendScriptParts("~/js/admintour/admin.tour.product.js");
 }
 
 <form asp-controller="Product" asp-action="Create" method="post" id="product-form">
