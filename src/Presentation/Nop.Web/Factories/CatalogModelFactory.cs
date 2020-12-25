@@ -188,7 +188,7 @@ namespace Nop.Web.Factories
                 displayingModel.AvailableSortOptions.Add(new SelectListItem
                 {
                     Text = await _localizationService.GetLocalizedEnumAsync((ProductSortingEnum)option.Id),
-                    Value = _webHelper.ModifyQueryString(currentPageUrl, "orderby", option.Id.ToString()),
+                    Value = option.Id.ToString(),
                     Selected = option.Id == command.OrderBy
                 });
             }
@@ -215,19 +215,18 @@ namespace Nop.Web.Factories
             displayingModel.ViewMode = viewMode;
             if (displayingModel.AllowProductViewModeChanging)
             {
-                var currentPageUrl = _webHelper.GetThisPageUrl(true);
                 //grid
                 displayingModel.AvailableViewModes.Add(new SelectListItem
                 {
                     Text = await _localizationService.GetResourceAsync("Catalog.ViewMode.Grid"),
-                    Value = _webHelper.ModifyQueryString(currentPageUrl, "viewmode", "grid"),
+                    Value = "grid",
                     Selected = viewMode == "grid"
                 });
                 //list
                 displayingModel.AvailableViewModes.Add(new SelectListItem
                 {
                     Text = await _localizationService.GetResourceAsync("Catalog.ViewMode.List"),
-                    Value = _webHelper.ModifyQueryString(currentPageUrl, "viewmode", "list"),
+                    Value = "list",
                     Selected = viewMode == "list"
                 });
             }
@@ -286,7 +285,7 @@ namespace Nop.Web.Factories
                         productsModel.DisplayingModel.PageSizeOptions.Add(new SelectListItem
                         {
                             Text = pageSize,
-                            Value = _webHelper.ModifyQueryString(sortUrl, "pagesize", pageSize),
+                            Value = pageSize,
                             Selected = pageSize.Equals(command.PageSize.ToString(), StringComparison.InvariantCultureIgnoreCase)
                         });
                     }
@@ -457,6 +456,7 @@ namespace Nop.Web.Factories
 
             model.CatalogProductsModel.LoadPagedList(products);
 
+            // todo: remove it
             //specs
             await model.CatalogProductsModel.FilteringModel.SpecificationFilter.PrepareSpecsFiltersAsync(alreadyFilteredSpecOptionIds,
                 filterableSpecificationAttributeOptionIds?.ToArray(), _specificationAttributeService, _localizationService, _webHelper, _workContext, _staticCacheManager);
@@ -828,8 +828,9 @@ namespace Nop.Web.Factories
                 if (featuredProducts != null)
                     model.FeaturedProducts = (await _productModelFactory.PrepareProductOverviewModelsAsync(featuredProducts)).ToList();
             }
-
+            
             //products
+            IList<int> alreadyFilteredSpecOptionIds = await model.CatalogProductsModel.FilteringModel.SpecificationFilter.GetAlreadyFilteredSpecOptionIdsAsync(_webHelper);
             var products = await _productService.SearchProductsAsync(command.PageNumber - 1, command.PageSize,
                 manufacturerId: manufacturer.Id,
                 storeId: (await _storeContext.GetCurrentStoreAsync()).Id,
@@ -837,6 +838,7 @@ namespace Nop.Web.Factories
                 excludeFeaturedProducts: !_catalogSettings.IgnoreFeaturedProducts && !_catalogSettings.IncludeFeaturedProductsInNormalLists,
                 priceMin: minPriceConverted,
                 priceMax: maxPriceConverted,
+                filteredSpecs: alreadyFilteredSpecOptionIds,
                 orderBy: (ProductSortingEnum)command.DisplayingModel.OrderBy);
             model.CatalogProductsModel.Products = (await _productModelFactory.PrepareProductOverviewModelsAsync(products)).ToList();
 

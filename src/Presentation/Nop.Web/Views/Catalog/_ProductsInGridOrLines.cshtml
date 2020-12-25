@@ -1,6 +1,7 @@
 ﻿@model CatalogProductsModel
 
 <div class="@(Model.DisplayingModel.ViewMode == "list" ? "product-list" : "product-grid")">
+    <div class="ajax-products-busy"></div>
     <div class="item-grid">
         @foreach (var product in Model.Products)
         {

@@ -1908,6 +1908,7 @@ label, label + * {
 .product-grid,
 .product-list {
   margin: 0 0 50px;
+  position: relative;
 }
 
 .product-grid .title {
@@ -1921,6 +1922,15 @@ label, label + * {
 
 .product-grid .title strong {
   font-weight: normal;
+}
+
+.product-grid .ajax-products-busy {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: #ffffffab url(../images/loading.gif) center no-repeat;
 }
 
 .manufacturer-grid .title {

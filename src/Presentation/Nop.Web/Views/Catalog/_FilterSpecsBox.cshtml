@@ -1,7 +1,6 @@
 ﻿@model SpecificationFilterModel
 @{
-    var notFilteredItemsGroups = Model.NotFilteredItems.GroupBy(x => x.SpecificationAttributeName);
-    var alreadyFilteredItemsGroups = Model.AlreadyFilteredItems.GroupBy(x => x.SpecificationAttributeName);
+    var notFilteredItemsGroups = Model.FilterItems.GroupBy(x => x.SpecificationAttributeName);
 }
 @if (Model.Enabled)
 {
@@ -10,7 +9,7 @@
             <strong>@T("Filtering.SpecificationFilter")</strong>
         </div>
         <div class="filter-content">
-            @if (Model.NotFilteredItems.Count > 0)
+            @if (Model.FilterItems.Count > 0)
             {
                 <div class="available-items">
                     @foreach (var group in notFilteredItemsGroups)
@@ -37,32 +36,12 @@
                                                 </span>
                                             </div>
                                         }
+                                        <input type="checkbox" data-option-id="@spec.SpecificationAttributeOptionId" />
                                     </a>
                                 </li>
                             }
                         </ul>
                     }
-                </div>
-            }
-            @if (Model.AlreadyFilteredItems.Count > 0)
-            {
-                <div class="filtered-items">
-                    <ul>
-                        <li class="title">
-                            @T("Filtering.SpecificationFilter.CurrentlyFilteredBy")
-                        </li>
-                        @foreach (var group in alreadyFilteredItemsGroups)
-                        {
-                            <li class="item">
-                                <strong>@group.First().SpecificationAttributeName</strong>:
-                                @group.ToList().Aggregate(string.Empty, (current, next) =>
-                                    $"{(string.IsNullOrEmpty(current) ? string.Empty : $"{current} {T("Filtering.SpecificationFilter.Separator")} ")}{next.SpecificationAttributeOptionName}")
-                            </li>
-                        }
-                    </ul>
-                </div>
-                <div class="remove-filter">
-                    <a href="@Model.RemoveFilterUrl">@T("Filtering.SpecificationFilter.Remove")</a>
                 </div>
             }
         </div>
