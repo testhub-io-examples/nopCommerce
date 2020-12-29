@@ -6,9 +6,13 @@
     //active menu item (system name)
     Html.SetActiveMenuItemSystemName("Payment methods");
 
-    Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
-    Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
-    Html.AppendScriptParts("~/js/admintour/admin.tour.paymentmethods.js");
+    var showTour = ViewBag.showtour ?? false;
+    if (showTour)
+    {
+        Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
+        Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+        Html.AppendScriptParts("~/js/admintour/admin.tour.paymentmethods.js");
+    }
 }
 
 <div class="content-header clearfix">

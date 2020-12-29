@@ -5,6 +5,14 @@
     ViewBag.PageTitle = T("Admin.Configuration.Stores.EditStoreDetails").Text;
     //active menu item (system name)
     Html.SetActiveMenuItemSystemName("Stores");
+
+    var showTour = ViewBag.showtour ?? false;
+    if (showTour)
+    {
+        Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
+        Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+        Html.AppendScriptParts("~/js/admintour/admin.tour.store.js");
+    }
 }
 
 <form asp-controller="Store" asp-action="Edit" method="post">

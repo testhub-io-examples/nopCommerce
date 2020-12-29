@@ -9,10 +9,6 @@
 
     const string hideSeoBlockAttributeName = "TopicDetailsPage.HideSeoBlock";
     var hideSeoBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideSeoBlockAttributeName, defaultValue: true);
-
-    Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
-    Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
-    Html.AppendScriptParts("~/js/admintour/admin.tour.topic.js");
 }
 
 <div asp-validation-summary="All"></div>

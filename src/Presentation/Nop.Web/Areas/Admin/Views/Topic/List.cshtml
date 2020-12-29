@@ -6,13 +6,17 @@
   //active menu item (system name)
   Html.SetActiveMenuItemSystemName("Topics");
 
-  Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
-  Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
-  Html.AppendScriptParts("~/js/admintour/admin.tour.topiclist.js");
+  string editQueryString = string.Empty;
+  var showTour = ViewBag.showtour ?? false;
+  if (showTour)
+  {
+      Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
+      Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+      Html.AppendScriptParts("~/js/admintour/admin.tour.topiclist.js");
 
-}
+      editQueryString = "?showtour=true";
+  }
 
-@{
   const string hideSearchBlockAttributeName = "TopicsPage.HideSearchBlock";
   var hideSearchBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideSearchBlockAttributeName);
 }
@@ -156,7 +160,7 @@
                                 Title = T("Admin.Common.Edit").Text,
                                 Width = "100",
                                 ClassName = NopColumnClassDefaults.Button + " column-edit",
-                                Render = new RenderButtonEdit(new DataUrl("Edit"))
+                                Render = new RenderCustom("renderColumnEdit")
                             }
                         }
                     })
@@ -166,3 +170,9 @@
     </div>
 </div>
 </section>
+
+<script>
+    function renderColumnEdit(data, type, row, meta) {
+        return '<a href="@Url.Content("~/Admin/Topic/Edit/")' + data + '@(editQueryString)" class="btn btn-default"><i class="fa fa-pencil"></i>@T("Admin.Common.Edit").Text</a>';
+    }
+</script>

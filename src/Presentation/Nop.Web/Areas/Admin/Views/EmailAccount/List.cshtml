@@ -6,9 +6,16 @@
   //active menu item (system name)
   Html.SetActiveMenuItemSystemName("Email accounts");
 
-  Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
-  Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
-  Html.AppendScriptParts("~/js/admintour/admin.tour.emailaccountlist.js");
+  string editQueryString = string.Empty;
+  var showTour = ViewBag.showtour ?? false;
+  if (showTour)
+  {
+      Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
+      Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+      Html.AppendScriptParts("~/js/admintour/admin.tour.emailaccountlist.js");
+
+      editQueryString = "?showtour=true";
+  }
 }
 
 <div class="content-header clearfix">
@@ -71,7 +78,7 @@
                                     Title = T("Admin.Common.Edit").Text,
                                     Width = "100",
                                     ClassName =  NopColumnClassDefaults.Button + " column-edit",
-                                    Render = new RenderButtonEdit(new DataUrl("Edit"))
+                                    Render = new RenderCustom("renderColumnEdit")
                                 }
                             }
                         })
@@ -82,3 +89,9 @@
     </div>
 </div>
 </section>
+
+<script>
+    function renderColumnEdit(data, type, row, meta) {
+        return '<a href="@Url.Content("~/Admin/EmailAccount/Edit/")' + data + '@(editQueryString)" class="btn btn-default"><i class="fa fa-pencil"></i>@T("Admin.Common.Edit").Text</a>';
+    }
+</script>

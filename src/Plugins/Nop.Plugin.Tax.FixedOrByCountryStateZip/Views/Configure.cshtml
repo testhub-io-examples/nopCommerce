@@ -1,11 +1,15 @@
 ﻿@model Nop.Plugin.Tax.FixedOrByCountryStateZip.Models.ConfigurationModel
 
 @{
-  Layout = "_ConfigurePlugin";
+    Layout = "_ConfigurePlugin";
 
-  Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
-  Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
-  Html.AppendScriptParts("~/js/admintour/admin.tour.taxmanual.js");
+    var showTour = ViewBag.showtour ?? false;
+    if (showTour)
+    {
+        Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
+        Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+    }
+    Html.AppendScriptParts("~/js/admintour/admin.tour.taxmanual.js");
 }
 
 <div class="form-group row">

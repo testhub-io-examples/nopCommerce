@@ -6,9 +6,16 @@
     //active menu item (system name)
     Html.SetActiveMenuItemSystemName("Tax providers");
 
-    Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
-    Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
-    Html.AppendScriptParts("~/js/admintour/admin.tour.taxproviders.js");
+    string editQueryString = string.Empty;
+    var showTour = ViewBag.showtour ?? false;
+    if (showTour)
+    {
+        Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
+        Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+        Html.AppendScriptParts("~/js/admintour/admin.tour.taxproviders.js");
+
+        editQueryString = "?showtour=true";
+    }
 }
 
 <form asp-controller="Tax" asp-action="Providers" method="post">
@@ -81,7 +88,7 @@
 
                             function renderColumnConfigure(data, type, row, meta) {
                                 if (row.ConfigurationUrl && row.ConfigurationUrl.length > 0) {
-                                    return '<a class="btn btn-default" href="' + row.ConfigurationUrl + '"><i class="fa fa-cog"></i>@T("Admin.Configuration.Tax.Providers.Configure").Text</a>';
+                                    return '<a class="btn btn-default" href="' + row.ConfigurationUrl + '@(editQueryString)"><i class="fa fa-cog"></i>@T("Admin.Configuration.Tax.Providers.Configure").Text</a>';
                                 } else {
                                     return '';
                                 }

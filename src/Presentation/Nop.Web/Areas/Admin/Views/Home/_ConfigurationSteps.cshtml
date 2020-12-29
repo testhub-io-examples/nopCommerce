@@ -65,7 +65,7 @@
             <div class="col-12">
                 <div class="row mb-2">
                     <div class="col-4">
-                        <a class="configuration-step-link theme-step" asp-action="GeneralCommon" asp-controller="Setting">
+                        <a class="configuration-step-link theme-step" asp-action="GeneralCommon" asp-controller="Setting" asp-route-showtour="@true">
                             <div class="row">
                                 <div class="col-12 col-xl-3">
                                     <div class="configuration-step-icon">
@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="col-4">
-                        <a class="configuration-step-link store-info-step" asp-action="Edit" asp-controller="Store" asp-route-id="@defaultStoreId">
+                        <a class="configuration-step-link store-info-step" asp-action="Edit" asp-controller="Store" asp-route-id="@defaultStoreId" asp-route-showtour="@true">
                             <div class="row">
                                 <div class="col-12 col-xl-3">
                                     <div class="configuration-step-icon">
@@ -101,7 +101,7 @@
                     </div>
 
                     <div class="col-4">
-                        <a class="configuration-step-link shipping-step" asp-action="Providers" asp-controller="Shipping">
+                        <a class="configuration-step-link shipping-step" asp-action="Providers" asp-controller="Shipping" asp-route-showtour="@true">
                             <div class="row">
                                 <div class="col-12 col-xl-3">
                                     <div class="configuration-step-icon">
@@ -121,7 +121,7 @@
 
                 <div class="row mb-2">
                     <div class="col-4">
-                        <a class="configuration-step-link payments-step" asp-action="Methods" asp-controller="Payment">
+                        <a class="configuration-step-link payments-step" asp-action="Methods" asp-controller="Payment" asp-route-showtour="@true">
                             <div class="row">
                                 <div class="col-12 col-xl-3">
                                     <div class="configuration-step-icon">
@@ -139,7 +139,7 @@
                     </div>
 
                     <div class="col-4">
-                        <a class="configuration-step-link taxes-step" asp-action="Providers" asp-controller="Tax">
+                        <a class="configuration-step-link taxes-step" asp-action="Providers" asp-controller="Tax" asp-route-showtour="@true">
                             <div class="row">
                                 <div class="col-12 col-xl-3">
                                     <div class="configuration-step-icon">
@@ -157,7 +157,7 @@
                     </div>
 
                     <div class="col-4">
-                        <a class="configuration-step-link products-step" asp-action="Create" asp-controller="Product">
+                        <a class="configuration-step-link products-step" asp-action="Create" asp-controller="Product" asp-route-showtour="@true">
                             <div class="row">
                                 <div class="col-12 col-xl-3">
                                     <div class="configuration-step-icon">
@@ -176,7 +176,7 @@
                 </div>
                 <div class="row mb-4">
                     <div class="col-4">
-                        <a class="configuration-step-link email-step" asp-action="List" asp-controller="EmailAccount">
+                        <a class="configuration-step-link email-step" asp-action="List" asp-controller="EmailAccount" asp-route-showtour="@true">
                             <div class="row">
                                 <div class="col-12 col-xl-3">
                                     <div class="configuration-step-icon">
@@ -194,7 +194,7 @@
                     </div>
 
                     <div class="col-4">
-                        <a class="configuration-step-link service-step" asp-action="List" asp-controller="Topic">
+                        <a class="configuration-step-link service-step" asp-action="List" asp-controller="Topic" asp-route-showtour="@true">
                             <div class="row">
                                 <div class="col-12 col-xl-3">
                                     <div class="configuration-step-icon">
