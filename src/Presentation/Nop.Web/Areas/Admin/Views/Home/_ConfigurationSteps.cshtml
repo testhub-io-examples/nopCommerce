@@ -4,8 +4,14 @@
 
 @{
   const string cardId = "configuration-steps-card";
-  const string hideCardAttributeName = "ConfigurationSteps";
+
+  //hide value
+  const string hideCardAttributeName = "HideConfigurationSteps";
   var hideCard = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideCardAttributeName);
+
+  //close value
+  const string closeCardAttributeName = "CloseConfigurationSteps";
+  var closeCard = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), closeCardAttributeName);
 
   var defaultStoreId = (await storeService.GetAllStoresAsync()).FirstOrDefault()?.Id ?? 0;
 }
@@ -37,6 +43,11 @@
             $('#@cardId').on('click', 'button[data-card-widget="collapse"]', function () {
                 var collapsed = !$('#@cardId').hasClass('collapsed-card');
                 saveUserPreferences('@(Url.Action("SavePreference", "Preferences"))', '@hideCardAttributeName', collapsed);
+            });
+
+            $('#@cardId').on('click', 'button[data-card-widget="remove"]', function () {
+                var collapsed = !$('#@cardId').hasClass('collapsed-card');
+                saveUserPreferences('@(Url.Action("SavePreference", "Preferences"))', '@closeCardAttributeName', collapsed);
             });
         });
     </script>
