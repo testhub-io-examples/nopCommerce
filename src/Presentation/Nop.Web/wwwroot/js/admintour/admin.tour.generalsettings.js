@@ -29,19 +29,36 @@
     }
   });
 
+  var nextButton = {
+    action() {
+      return tour.next();
+    },
+    classes: 'button-next',
+    text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
+  };
+
+  var backButton = {
+    action() {
+      return tour.back();
+    },
+    classes: 'button-back',
+    text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
+  };
+
+  var doneButton = {
+    action() {
+      return tour.cancel();
+    },
+    classes: 'button-done',
+    text: LocalResourcesProvider.localized_data.Done,
+    secondary: true
+  };
+
   //'Welcome' step
   tour.addStep({
     title: LocalResourcesProvider.localized_data.PersonalizeStoreIntroTitle,
     text: LocalResourcesProvider.localized_data.PersonalizeStoreIntroText,
-    buttons: [
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [nextButton]
   });
 
   //'Basic/Advanced mode' step
@@ -52,22 +69,7 @@
       element: '.onoffswitch',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [backButton, nextButton]
   });
 
   //'Choose a theme' step
@@ -78,22 +80,7 @@
       element: '#theme-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ],
+    buttons: [backButton, nextButton]
   });
 
   //'Upload your logo' step
@@ -104,23 +91,7 @@
       element: '#logo-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
-      },
-      {
-        action() {
-          return tour.cancel();
-        },
-        classes: 'button-done',
-        text: LocalResourcesProvider.localized_data.Done,
-        secondary: true
-      }
-    ],
+    buttons: [backButton, doneButton]
   });
 
   tour.start();

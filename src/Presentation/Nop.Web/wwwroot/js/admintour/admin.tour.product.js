@@ -29,6 +29,31 @@
     }
   });
 
+  var nextButton = {
+    action() {
+      return tour.next();
+    },
+    classes: 'button-next',
+    text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
+  };
+
+  var backButton = {
+    action() {
+      return tour.back();
+    },
+    classes: 'button-back',
+    text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
+  };
+
+  var doneButton = {
+    action() {
+      return tour.cancel();
+    },
+    classes: 'button-done',
+    text: LocalResourcesProvider.localized_data.Done,
+    secondary: true
+  };
+
   //'Settings button' step
   tour.addStep({
     title: 'Settings button',
@@ -37,15 +62,7 @@
       element: '#product-editor-settings',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [nextButton]
   });
 
   //'Your store URL' step
@@ -57,22 +74,7 @@
       on: 'bottom'
     },
     classes: 'step-with-image',
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [backButton, nextButton]
   });
 
   //'Product price' step
@@ -83,22 +85,7 @@
       element: '#product-price-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ],
+    buttons: [backButton, nextButton]
   });
 
   //'Product tax category' step
@@ -109,22 +96,7 @@
       element: '#product-tax-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ],
+    buttons: [backButton, nextButton]
   });
 
   //'Product shipping info' step
@@ -135,22 +107,7 @@
       element: '#product-shipping-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ],
+    buttons: [backButton, nextButton]
   });
 
   //'Product inventory' step
@@ -161,22 +118,7 @@
       element: '#product-inventory-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ],
+    buttons: [backButton, nextButton]
   });
 
   //'Product pictures' step
@@ -187,23 +129,7 @@
       element: '#product-pictures-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-      },
-      {
-        action() {
-          return tour.cancel();
-        },
-        classes: 'button-done',
-        text: 'Done',
-        secondary: true
-      }
-    ],
+    buttons: [backButton, doneButton]
   });
 
   tour.start();

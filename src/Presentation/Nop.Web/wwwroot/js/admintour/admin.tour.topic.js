@@ -29,6 +29,31 @@
     }
   });
 
+  var nextButton = {
+    action() {
+      return tour.next();
+    },
+    classes: 'button-next',
+    text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
+  };
+
+  var backButton = {
+    action() {
+      return tour.back();
+    },
+    classes: 'button-back',
+    text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
+  };
+
+  var doneButton = {
+    action() {
+      return tour.cancel();
+    },
+    classes: 'button-done',
+    text: LocalResourcesProvider.localized_data.Done,
+    secondary: true
+  };
+
   //'Title and content' step
   tour.addStep({
     title: 'Title and content',
@@ -37,15 +62,7 @@
       element: '#info-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [nextButton]
   });
 
   //'Preview the page' step
@@ -56,23 +73,7 @@
       element: '#preview-topic-button',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-      },
-      {
-        action() {
-          return tour.cancel();
-        },
-        classes: 'button-done',
-        text: 'Done',
-        secondary: true
-      }
-    ]
+    buttons: [backButton, doneButton]
   });
 
   tour.start();

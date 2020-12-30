@@ -29,6 +29,31 @@
     }
   });
 
+  var nextButton = {
+    action() {
+      return tour.next();
+    },
+    classes: 'button-next',
+    text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
+  };
+
+  var backButton = {
+    action() {
+      return tour.back();
+    },
+    classes: 'button-back',
+    text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
+  };
+
+  var doneButton = {
+    action() {
+      return tour.cancel();
+    },
+    classes: 'button-done',
+    text: LocalResourcesProvider.localized_data.Done,
+    secondary: true
+  };
+
   //'Your store name' step
   tour.addStep({
     title: 'Your store name',
@@ -37,15 +62,7 @@
       element: '#store-name-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [nextButton]
   });
 
   //'Your store URL' step
@@ -56,22 +73,7 @@
       element: '#store-url-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [backButton, nextButton]
   });
 
   //'Enable SSL' step
@@ -82,23 +84,7 @@
       element: '#ssl-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-      },
-      {
-        action() {
-          return tour.cancel();
-        },
-        classes: 'button-done',
-        text: 'Done',
-        secondary: true
-      }
-    ],
+    buttons: [backButton, doneButton]
   });
 
   tour.start();

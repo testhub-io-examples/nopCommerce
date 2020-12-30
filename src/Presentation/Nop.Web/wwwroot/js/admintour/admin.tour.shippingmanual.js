@@ -34,6 +34,31 @@
       }
     });
 
+    var nextButton = {
+      action() {
+        return tour.next();
+      },
+      classes: 'button-next',
+      text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
+    };
+
+    var backButton = {
+      action() {
+        return tour.back();
+      },
+      classes: 'button-back',
+      text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
+    };
+
+    var doneButton = {
+      action() {
+        return tour.cancel();
+      },
+      classes: 'button-done',
+      text: LocalResourcesProvider.localized_data.Done,
+      secondary: true
+    };
+
     //'Fixed Rate/By Weight' switch steps
     tour.addStep({
       title: 'Fixed rate/By weight switch',
@@ -43,15 +68,7 @@
         element: '.onoffswitch',
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        }
-      ]
+      buttons: [nextButton]
     });
 
     tour.addStep({
@@ -61,22 +78,7 @@
         element: '.onoffswitch',
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.back();
-          },
-          classes: 'button-back',
-          text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-        },
-        {
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        }
-      ]
+      buttons: [backButton, nextButton]
     });
 
     tour.addStep({
@@ -86,22 +88,7 @@
         element: '.onoffswitch',
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.back();
-          },
-          classes: 'button-back',
-          text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-        },
-        {
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        }
-      ]
+      buttons: [backButton, nextButton]
     });
 
 
@@ -113,22 +100,7 @@
         element: '#shipping-rate-grid_wrapper',
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.back();
-          },
-          classes: 'button-back',
-          text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-        },
-        {
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        }
-      ],
+      buttons: [backButton, nextButton]
     });
 
     //'Edit rate' step
@@ -143,22 +115,7 @@
           on: 'bottom'
         },
         canClickTarget: false,
-        buttons: [
-          {
-            action() {
-              return tour.back();
-            },
-            classes: 'button-back',
-            text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-          },
-          {
-            action() {
-              return tour.next();
-            },
-            classes: 'button-next',
-            text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-          }
-        ],
+        buttons: [backButton, nextButton]
       });
     }
 
@@ -170,26 +127,9 @@
         element: '#manage-shipping-methods-button',
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.back();
-          },
-          classes: 'button-back',
-          text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-        },
-        {
-          action() {
-            return tour.cancel();
-          },
-          classes: 'button-done',
-          text: 'Done',
-          secondary: true
-        }
-      ],
+      buttons: [backButton, doneButton]
     });
 
     tour.start();
-
   });
 })

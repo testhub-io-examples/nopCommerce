@@ -30,6 +30,31 @@
       }
     });
 
+    var nextButton = {
+      action() {
+        return tour.next();
+      },
+      classes: 'button-next',
+      text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
+    };
+
+    var backButton = {
+      action() {
+        return tour.back();
+      },
+      classes: 'button-back',
+      text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
+    };
+
+    var doneButton = {
+      action() {
+        return tour.cancel();
+      },
+      classes: 'button-done',
+      text: LocalResourcesProvider.localized_data.Done,
+      secondary: true
+    };
+
     var manualMethodRowId = 'row_taxfixedorbycountrystatezip';
     var avalaraMethodRowId = 'row_taxavalara';
 
@@ -39,26 +64,9 @@
     //'Tax providers' step
     var taxProvidersStepButtons = [];
     if (!manualMethodExists && !avalaraMethodExists) {
-      taxProvidersStepButtons = [
-        {
-          action() {
-            return tour.cancel();
-          },
-          classes: 'button-done',
-          text: 'Done',
-          secondary: true
-        }
-      ]
+      taxProvidersStepButtons = [doneButton]
     } else {
-      taxProvidersStepButtons = [
-        {
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        }
-      ]
+      taxProvidersStepButtons = [nextButton]
     }
 
     tour.addStep({
@@ -80,22 +88,7 @@
           element: '#' + avalaraMethodRowId,
           on: 'bottom'
         },
-        buttons: [
-          {
-            action() {
-              return tour.back();
-            },
-            classes: 'button-back',
-            text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-          },
-          {
-            action() {
-              return tour.next();
-            },
-            classes: 'button-next',
-            text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-          }
-        ],
+        buttons: [backButton, nextButton]
       });
     }
 
@@ -108,22 +101,7 @@
           element: '#' + manualMethodRowId,
           on: 'bottom'
         },
-        buttons: [
-          {
-            action() {
-              return tour.back();
-            },
-            classes: 'button-back',
-            text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-          },
-          {
-            action() {
-              return tour.next();
-            },
-            classes: 'button-next',
-            text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-          }
-        ]
+        buttons: [backButton, nextButton]
       });
     }
 
@@ -136,22 +114,7 @@
           element: '#' + manualMethodRowId + ' .column-primary .btn',
           on: 'bottom'
         },
-        buttons: [
-          {
-            action() {
-              return tour.back();
-            },
-            classes: 'button-back',
-            text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-          },
-          {
-            action() {
-              return tour.next();
-            },
-            classes: 'button-next',
-            text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-          }
-        ],
+        buttons: [backButton, nextButton]
       });
     }
 
@@ -164,23 +127,7 @@
           element: '#' + manualMethodRowId + ' .column-configure .btn-default',
           on: 'bottom'
         },
-        buttons: [
-          {
-            action() {
-              return tour.back();
-            },
-            classes: 'button-back',
-            text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-          },
-          {
-            action() {
-              return tour.cancel();
-            },
-            classes: 'button-done',
-            text: 'Done',
-            secondary: true
-          }
-        ],
+        buttons: [backButton, doneButton]
       });
     }
 

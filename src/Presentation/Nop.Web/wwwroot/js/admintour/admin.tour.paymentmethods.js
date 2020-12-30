@@ -30,6 +30,31 @@
       }
     });
 
+    var nextButton = {
+      action() {
+        return tour.next();
+      },
+      classes: 'button-next',
+      text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
+    };
+
+    var backButton = {
+      action() {
+        return tour.back();
+      },
+      classes: 'button-back',
+      text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
+    };
+
+    var doneButton = {
+      action() {
+        return tour.cancel();
+      },
+      classes: 'button-done',
+      text: LocalResourcesProvider.localized_data.Done,
+      secondary: true
+    };
+
     var checkMoneyMethodRowId = 'row_paymentscheckmoneyorder';
     var manualMethodRowId = 'row_paymentsmanual';
     var paypalButtonsMethodRowId = 'row_paymentspaypalsmartpaymentbuttons';
@@ -41,26 +66,9 @@
     //'Payment methods' step
     var paymentMethodsStepButtons = [];
     if (!checkMoneyMethodExists && !manualMethodExists && paypalButtonsMethodExists) {
-      paymentMethodsStepButtons = [
-        {
-          action() {
-            return tour.cancel();
-          },
-          classes: 'button-done',
-          text: 'Done',
-          secondary: true
-        }
-      ]
+      paymentMethodsStepButtons = [doneButton]
     } else {
-      paymentMethodsStepButtons = [
-        {
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        }
-      ]
+      paymentMethodsStepButtons = [nextButton]
     }
 
     tour.addStep({
@@ -82,22 +90,7 @@
           element: '#' + checkMoneyMethodRowId,
           on: 'bottom'
         },
-        buttons: [
-          {
-            action() {
-              return tour.back();
-            },
-            classes: 'button-back',
-            text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-          },
-          {
-            action() {
-              return tour.next();
-            },
-            classes: 'button-next',
-            text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-          }
-        ]
+        buttons: [backButton, nextButton]
       });
     }
 
@@ -110,22 +103,7 @@
           element: '#' + manualMethodRowId,
           on: 'bottom'
         },
-        buttons: [
-          {
-            action() {
-              return tour.back();
-            },
-            classes: 'button-back',
-            text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-          },
-          {
-            action() {
-              return tour.next();
-            },
-            classes: 'button-next',
-            text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-          }
-        ]
+        buttons: [backButton, nextButton]
       });
     }
 
@@ -138,22 +116,7 @@
           element: '#' + paypalButtonsMethodRowId,
           on: 'bottom'
         },
-        buttons: [
-          {
-            action() {
-              return tour.back();
-            },
-            classes: 'button-back',
-            text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-          },
-          {
-            action() {
-              return tour.next();
-            },
-            classes: 'button-next',
-            text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-          }
-        ],
+        buttons: [backButton, nextButton]
       });
     }
 
@@ -165,23 +128,7 @@
         element: '#' + paypalButtonsMethodRowId + ' .column-configure .btn-default',
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.back();
-          },
-          classes: 'button-back',
-          text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-        },
-        {
-          action() {
-            return tour.cancel();
-          },
-          classes: 'button-done',
-          text: 'Done',
-          secondary: true
-        }
-      ],
+      buttons: [backButton, doneButton]
     });
 
     tour.start();

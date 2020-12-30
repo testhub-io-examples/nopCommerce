@@ -30,6 +30,31 @@
       }
     });
 
+    var nextButton = {
+      action() {
+        return tour.next();
+      },
+      classes: 'button-next',
+      text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
+    };
+
+    var backButton = {
+      action() {
+        return tour.back();
+      },
+      classes: 'button-back',
+      text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
+    };
+
+    var doneButton = {
+      action() {
+        return tour.cancel();
+      },
+      classes: 'button-done',
+      text: LocalResourcesProvider.localized_data.Done,
+      secondary: true
+    };		
+
     //'Topics (pages)' step
     tour.addStep({
       title: 'Topics (pages)',
@@ -38,15 +63,7 @@
         element: '#topics-area',
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        }
-      ]
+      buttons: [nextButton]
     });
 
     //'Topics (pages)' step
@@ -57,22 +74,7 @@
         element: '#topics-area',
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.back();
-          },
-          classes: 'button-back',
-          text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-        },
-        {
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        }
-      ]
+      buttons: [backButton, nextButton]
     });
 
     var shippingTopicRowId = 'row_shippinginfo';
@@ -85,22 +87,7 @@
         element: '#' + shippingTopicRowId,
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.back();
-          },
-          classes: 'button-back',
-          text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-        },
-        {
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        }
-      ]
+      buttons: [backButton, nextButton]
     });
 
     //'Link location' step
@@ -111,22 +98,7 @@
         element: '#' + shippingTopicRowId + ' .column-footer-column1',
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.back();
-          },
-          classes: 'button-back',
-          text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-        },
-        {
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        }
-      ]
+      buttons: [backButton, nextButton]
     });
 
     //'Edit the page' step
@@ -137,23 +109,7 @@
         element: '#' + shippingTopicRowId + ' .column-edit .btn',
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.back();
-          },
-          classes: 'button-back',
-          text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-        },
-        {
-          action() {
-            return tour.cancel();
-          },
-          classes: 'button-done',
-          text: 'Done',
-          secondary: true
-        }
-      ],
+      buttons: [backButton, doneButton]
     });
 
     tour.start();

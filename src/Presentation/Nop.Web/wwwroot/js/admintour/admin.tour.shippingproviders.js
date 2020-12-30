@@ -30,6 +30,31 @@
       }
     });
 
+    var nextButton = {
+      action() {
+        return tour.next();
+      },
+      classes: 'button-next',
+      text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
+    };
+
+    var backButton = {
+      action() {
+        return tour.back();
+      },
+      classes: 'button-back',
+      text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
+    };
+
+    var doneButton = {
+      action() {
+        return tour.cancel();
+      },
+      classes: 'button-done',
+      text: LocalResourcesProvider.localized_data.Done,
+      secondary: true
+    };
+
     var manualMethodRowId = 'row_shippingfixedbyweightbytotal';
     var shipStationMethodRowId = 'row_shippingshipstation';
 
@@ -39,26 +64,9 @@
     //'Set up shipping' step
     var shippingMethodStepButtons = [];
     if (!manualMethodExists && !shipStationMethodExists) {
-      shippingMethodStepButtons = [
-        {
-          action() {
-            return tour.cancel();
-          },
-          classes: 'button-done',
-          text: 'Done',
-          secondary: true
-        }
-      ]
+      shippingMethodStepButtons = [doneButton]
     } else {
-      shippingMethodStepButtons = [
-        {
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        }
-      ]
+      shippingMethodStepButtons = [nextButton]
     }
 
     tour.addStep({
@@ -80,51 +88,17 @@
           element: '#' + manualMethodRowId,
           on: 'bottom'
         },
-        buttons: [
-          {
-            action() {
-              return tour.back();
-            },
-            classes: 'button-back',
-            text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-          },
-          {
-            action() {
-              return tour.next();
-            },
-            classes: 'button-next',
-            text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-          }
-        ]
+        buttons: [backButton, nextButton]
       });
     }
 
     //'ShipStation shipping provider' step
     if (shipStationMethodExists) {
-      var shipStationStepButtons = [{
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-      }];
+      var shipStationStepButtons = [backButton];
       if (manualMethodExists) {
-        shipStationStepButtons.push({
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        });
+        shipStationStepButtons.push(nextButton);
       } else {
-        shipStationStepButtons.push({
-          action() {
-            return tour.cancel();
-          },
-          classes: 'button-done',
-          text: 'Done',
-          secondary: true
-        });
+        shipStationStepButtons.push(doneButton);
       }
 
       tour.addStep({
@@ -147,23 +121,7 @@
           element: '#' + manualMethodRowId + ' .column-configure .btn-default',
           on: 'bottom'
         },
-        buttons: [
-          {
-            action() {
-              return tour.back();
-            },
-            classes: 'button-back',
-            text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-          },
-          {
-            action() {
-              return tour.cancel();
-            },
-            classes: 'button-done',
-            text: 'Done',
-            secondary: true
-          }
-        ],
+        buttons: [backButton, doneButton]
       });
     }
 

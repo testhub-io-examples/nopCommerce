@@ -29,6 +29,31 @@
     }
   });
 
+  var nextButton = {
+    action() {
+      return tour.next();
+    },
+    classes: 'button-next',
+    text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
+  };
+
+  var backButton = {
+    action() {
+      return tour.back();
+    },
+    classes: 'button-back',
+    text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
+  };
+
+  var doneButton = {
+    action() {
+      return tour.cancel();
+    },
+    classes: 'button-done',
+    text: LocalResourcesProvider.localized_data.Done,
+    secondary: true
+  };
+
   //'Email address' step
   tour.addStep({
     title: LocalResourcesProvider.localized_data.EmailAccountsEmailAddressTitle,
@@ -37,15 +62,7 @@
       element: '#email-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [nextButton]
   });
 
   //'Email display name' step
@@ -56,22 +73,7 @@
       element: '#display-name-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [backButton, nextButton]
   });
 
   //'Host' step
@@ -82,22 +84,7 @@
       element: '#host-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [backButton, nextButton]
   });
 
   //'Port' step
@@ -108,22 +95,7 @@
       element: '#port-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [backButton, nextButton]
   });
 
   //'Username' step
@@ -134,22 +106,7 @@
       element: '#username-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [backButton, nextButton]
   });
 
   //'Password' step
@@ -160,22 +117,7 @@
       element: '#password-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [backButton, nextButton]
   });
 
   //'SSL' step
@@ -186,22 +128,7 @@
       element: '#ssl-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [backButton, nextButton]
   });
 
   //'Use default credentials' step
@@ -212,22 +139,7 @@
       element: '#default-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
-      },
-      {
-        action() {
-          return tour.next();
-        },
-        classes: 'button-next',
-        text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
-      }
-    ]
+    buttons: [backButton, nextButton]
   });
 
   //'Send test email' step
@@ -238,23 +150,7 @@
       element: '#test-email-area',
       on: 'bottom'
     },
-    buttons: [
-      {
-        action() {
-          return tour.back();
-        },
-        classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
-      },
-      {
-        action() {
-          return tour.cancel();
-        },
-        classes: 'button-done',
-        text: LocalResourcesProvider.localized_data.Done,
-        secondary: true
-      }
-    ]
+    buttons: [backButton, doneButton]
   });
 
   tour.start();

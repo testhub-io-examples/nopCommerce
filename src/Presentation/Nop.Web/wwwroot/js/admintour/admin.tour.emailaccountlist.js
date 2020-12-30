@@ -30,6 +30,31 @@
       }
     });
 
+    var nextButton = {
+      action() {
+        return tour.next();
+      },
+      classes: 'button-next',
+      text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
+    };
+
+    var backButton = {
+      action() {
+        return tour.back();
+      },
+      classes: 'button-back',
+      text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
+    };
+
+    var doneButton = {
+      action() {
+        return tour.cancel();
+      },
+      classes: 'button-done',
+      text: LocalResourcesProvider.localized_data.Done,
+      secondary: true
+    };
+
     //'Email accounts' step
     tour.addStep({
       title: 'Email accounts',
@@ -38,15 +63,7 @@
         element: '#email-accounts-area',
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        }
-      ]
+      buttons: [nextButton]
     });
 
 
@@ -58,22 +75,7 @@
         element: '#email-accounts-area',
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.back();
-          },
-          classes: 'button-back',
-          text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-        },
-        {
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        }
-      ]
+      buttons: [backButton, nextButton]
     });
 
     var defaultEmailAccountRowId = 'row_testmailcom';
@@ -86,22 +88,7 @@
         element: '#' + defaultEmailAccountRowId + ' .column-default .btn',
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.back();
-          },
-          classes: 'button-back',
-          text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-        },
-        {
-          action() {
-            return tour.next();
-          },
-          classes: 'button-next',
-          text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
-        }
-      ]
+      buttons: [backButton, nextButton]
     });
 
     //'Edit an email account' step
@@ -112,23 +99,7 @@
         element: '#' + defaultEmailAccountRowId + ' .column-edit .btn',
         on: 'bottom'
       },
-      buttons: [
-        {
-          action() {
-            return tour.back();
-          },
-          classes: 'button-back',
-          text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
-        },
-        {
-          action() {
-            return tour.cancel();
-          },
-          classes: 'button-done',
-          text: 'Done',
-          secondary: true
-        }
-      ],
+      buttons: [backButton, doneButton]
     });
 
     tour.start();
