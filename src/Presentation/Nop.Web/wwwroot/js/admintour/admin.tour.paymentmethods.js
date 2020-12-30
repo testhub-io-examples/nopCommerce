@@ -72,8 +72,8 @@
     }
 
     tour.addStep({
-      title: 'Payment methods',
-      text: 'On this page you can see all the payment methods (plugins) which allowed to use in your store. But you can always find much more in our <a href="https://www.nopcommerce.com/extensions?category=payment-modules" target="_blank">marketplace</a>',
+      title: LocalResourcesProvider.localized_data.PaymentMethodsPaymentMethodsTitle,
+      text: LocalResourcesProvider.localized_data.PaymentMethodsPaymentMethodsText,
       attachTo: {
         element: '#payment-methods-area',
         on: 'bottom'
@@ -84,8 +84,8 @@
     //'Check/Money Order' step
     if (checkMoneyMethodExists) {
       tour.addStep({
-        title: 'Check/money order',
-        text: '<b>Check/money orders</b> are often used by government agencies or large businesses. Rather than paying directly through your site, shoppers will request that you send them a Purchase order (PO), and they will send the payment back. Most of the order processing is handled outside of the software. This method is already enabled',
+        title: LocalResourcesProvider.localized_data.PaymentMethodsCheckMoneyTitle,
+        text: LocalResourcesProvider.localized_data.PaymentMethodsCheckMoneyText,
         attachTo: {
           element: '#' + checkMoneyMethodRowId,
           on: 'bottom'
@@ -97,8 +97,8 @@
     //'Manual' step
     if (manualMethodExists) {
       tour.addStep({
-        title: 'Credit card (manual)',
-        text: 'This is a special payment plugin that allows all orders to be successfully entered on the website, but it does NOT really charge a customer or make any calls to any live payment gateway. It is recommended to use this payment method if you want to perform one of the following: <ul><li>Process all orders offline</li><li>Process them manually via another back-office system</li><li>Test the site end-to-end before going live</li></ul>',
+        title: LocalResourcesProvider.localized_data.PaymentMethodsManualTitle,
+        text: LocalResourcesProvider.localized_data.PaymentMethodsManualText,
         attachTo: {
           element: '#' + manualMethodRowId,
           on: 'bottom'
@@ -110,8 +110,8 @@
     //'PayPal Smart Payment Buttons' step
     if (paypalButtonsMethodExists) {
       tour.addStep({
-        title: 'PayPal Smart Payment Buttons',
-        text: 'If you want to process payments online we\'d recommend you to set up the <b>PayPal Smart Payment Buttons</b> payment method. PayPal Checkout with Smart Payment Buttons gives your buyers a simplified and secure checkout experience. Read more how to set this plugin <a href="https://docs.nopcommerce.com/getting-started/configure-payments/payment-methods/paypal-smart-payment-buttons.html" target="_blank">here</a>',
+        title: LocalResourcesProvider.localized_data.PaymentMethodsPaymentMethodsTitle,
+        text: LocalResourcesProvider.localized_data.PaymentMethodsPaymentMethodsText,
         attachTo: {
           element: '#' + paypalButtonsMethodRowId,
           on: 'bottom'
@@ -122,8 +122,8 @@
 
     //'Configure a payment method' step
     tour.addStep({
-      title: 'Configure a payment method',
-      text: 'You can configure each payment method by clicking the appropriate <b>Configure</b> button',
+      title: LocalResourcesProvider.localized_data.PaymentMethodsPayPalTitle,
+      text: LocalResourcesProvider.localized_data.PaymentMethodsPayPalText,
       attachTo: {
         element: '#' + paypalButtonsMethodRowId + ' .column-configure .btn-default',
         on: 'bottom'

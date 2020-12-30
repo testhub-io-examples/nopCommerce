@@ -57,8 +57,8 @@
 
     //'Email accounts' step
     tour.addStep({
-      title: 'Email accounts',
-      text: 'Here you can see the list of the existing email accounts. There is the only one email account created by default. You can also add a general contact email, a sales representative email, a customer support email and more to contact to your customers',
+      title: LocalResourcesProvider.localized_data.EmailAccountListEmailAccounts1Title,
+      text: LocalResourcesProvider.localized_data.EmailAccountListEmailAccounts1Text,
       attachTo: {
         element: '#email-accounts-area',
         on: 'bottom'
@@ -69,8 +69,8 @@
 
     //'Email accounts' step
     tour.addStep({
-      title: 'Email accounts',
-      text: 'Then, these email accounts will be used to send order notications, registration emails and newsletter to your customers. But you can use the only one email for all these purposes.',
+      title: LocalResourcesProvider.localized_data.EmailAccountListEmailAccounts2Title,
+      text: LocalResourcesProvider.localized_data.EmailAccountListEmailAccounts2Text,
       attachTo: {
         element: '#email-accounts-area',
         on: 'bottom'
@@ -80,10 +80,10 @@
 
     var defaultEmailAccountRowId = 'row_testmailcom';
 
-    //'Email accounts' step
+    //'Default email account' step
     tour.addStep({
-      title: 'Email accounts',
-      text: 'Don\'t forget to mark the reqiured email account as a default one',
+      title: LocalResourcesProvider.localized_data.EmailAccountListDefaultEmailAccountTitle,
+      text: LocalResourcesProvider.localized_data.EmailAccountListDefaultEmailAccountText,
       attachTo: {
         element: '#' + defaultEmailAccountRowId + ' .column-default .btn',
         on: 'bottom'
@@ -93,8 +93,8 @@
 
     //'Edit an email account' step
     tour.addStep({
-      title: 'Edit an email account',
-      text: 'To edit an email account click the <b>Edit</b> button',
+      title: LocalResourcesProvider.localized_data.EmailAccountListEditTitle,
+      text: LocalResourcesProvider.localized_data.EmailAccountListEditText,
       attachTo: {
         element: '#' + defaultEmailAccountRowId + ' .column-edit .btn',
         on: 'bottom'

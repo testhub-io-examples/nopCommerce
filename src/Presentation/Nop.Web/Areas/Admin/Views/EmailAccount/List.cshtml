@@ -12,9 +12,32 @@
   {
       Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
       Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+      Html.AppendScriptParts("~/js/admintour/admin.tour.localresources.provider.js");
       Html.AppendScriptParts("~/js/admintour/admin.tour.emailaccountlist.js");
 
       editQueryString = "?showtour=true";
+
+    <script asp-location="Footer">
+        var localized_data = {
+            Back: "@T("Admin.ConfigurationSteps.Back")",
+            Next: "@T("Admin.ConfigurationSteps.Next")",
+            Done: "@T("Admin.ConfigurationSteps.Done")",
+
+            EmailAccountListEmailAccounts1Title: "@T("Admin.ConfigurationSteps.EmailAccountList.EmailAccounts1.Title")",
+            EmailAccountListEmailAccounts1Text: "@T("Admin.ConfigurationSteps.EmailAccountList.EmailAccounts1.Text")",
+
+            EmailAccountListEmailAccounts2Title: "@T("Admin.ConfigurationSteps.EmailAccountList.EmailAccounts2.Title")",
+            EmailAccountListEmailAccounts2Text: "@T("Admin.ConfigurationSteps.EmailAccountList.EmailAccounts2.Text")",
+
+            EmailAccountListDefaultEmailAccountTitle: "@T("Admin.ConfigurationSteps.EmailAccountList.DefaultEmailAccount.Title")",
+            EmailAccountListDefaultEmailAccountText: "@T("Admin.ConfigurationSteps.EmailAccountList.DefaultEmailAccount.Text")",
+
+            EmailAccountListEditTitle: "@T("Admin.ConfigurationSteps.EmailAccountList.Edit.Title")",
+            EmailAccountListEditText: "@T("Admin.ConfigurationSteps.EmailAccountList.Edit.Text")",
+        };
+
+        LocalResourcesProvider.init(localized_data);
+    </script>
   }
 }
 

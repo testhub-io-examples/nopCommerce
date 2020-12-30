@@ -11,7 +11,33 @@
     {
         Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
         Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+        Html.AppendScriptParts("~/js/admintour/admin.tour.localresources.provider.js");
         Html.AppendScriptParts("~/js/admintour/admin.tour.paymentmethods.js");
+
+    <script asp-location="Footer">
+            var localized_data = {
+                Back: "@T("Admin.ConfigurationSteps.Back")",
+                Next: "@T("Admin.ConfigurationSteps.Next")",
+                Done: "@T("Admin.ConfigurationSteps.Done")",
+
+                PaymentMethodsPaymentMethodsTitle: "@T("Admin.ConfigurationSteps.PaymentMethods.PaymentMethods.Title")",
+                PaymentMethodsPaymentMethodsText: "@T("Admin.ConfigurationSteps.PaymentMethods.PaymentMethods.Text")",
+
+                PaymentMethodsCheckMoneyTitle: "@T("Admin.ConfigurationSteps.PaymentMethods.CheckMoney.Title")",
+                PaymentMethodsCheckMoneyText: "@T("Admin.ConfigurationSteps.PaymentMethods.CheckMoney.Text")",
+
+                PaymentMethodsManualTitle: "@T("Admin.ConfigurationSteps.PaymentMethods.Manual.Title")",
+                PaymentMethodsManualText: "@T("Admin.ConfigurationSteps.PaymentMethods.Manual.Text")",
+
+                PaymentMethodsPayPalTitle: "@T("Admin.ConfigurationSteps.PaymentMethods.PayPal.Title")",
+                PaymentMethodsPayPalText: "@T("Admin.ConfigurationSteps.PaymentMethods.PayPal.Text")",
+
+                PaymentMethodsConfigureTitle: "@T("Admin.ConfigurationSteps.PaymentMethods.Configure.Title")",
+                PaymentMethodsConfigureText: "@T("Admin.ConfigurationSteps.PaymentMethods.Configure.Text")",
+            };
+
+            LocalResourcesProvider.init(localized_data);
+    </script>
     }
 }
 

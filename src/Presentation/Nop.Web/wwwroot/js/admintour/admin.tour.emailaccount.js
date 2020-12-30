@@ -56,8 +56,8 @@
 
   //'Email address' step
   tour.addStep({
-    title: LocalResourcesProvider.localized_data.EmailAccountsEmailAddressTitle,
-    text: LocalResourcesProvider.localized_data.EmailAccountsEmailAddressText,
+    title: LocalResourcesProvider.localized_data.EmailAccountEmailAddressTitle,
+    text: LocalResourcesProvider.localized_data.EmailAccountEmailAddressText,
     attachTo: {
       element: '#email-area',
       on: 'bottom'
@@ -67,8 +67,8 @@
 
   //'Email display name' step
   tour.addStep({
-    title: LocalResourcesProvider.localized_data.EmailAccountsDisplayNameTitle,
-    text: LocalResourcesProvider.localized_data.EmailAccountsDisplayNameText,
+    title: LocalResourcesProvider.localized_data.EmailAccountDisplayNameTitle,
+    text: LocalResourcesProvider.localized_data.EmailAccountDisplayNameText,
     attachTo: {
       element: '#display-name-area',
       on: 'bottom'
@@ -78,8 +78,8 @@
 
   //'Host' step
   tour.addStep({
-    title: LocalResourcesProvider.localized_data.EmailAccountsHostTitle,
-    text: LocalResourcesProvider.localized_data.EmailAccountsHostText,
+    title: LocalResourcesProvider.localized_data.EmailAccountHostTitle,
+    text: LocalResourcesProvider.localized_data.EmailAccountHostText,
     attachTo: {
       element: '#host-area',
       on: 'bottom'
@@ -89,8 +89,8 @@
 
   //'Port' step
   tour.addStep({
-    title: LocalResourcesProvider.localized_data.EmailAccountsPortTitle,
-    text: LocalResourcesProvider.localized_data.EmailAccountsPortText,
+    title: LocalResourcesProvider.localized_data.EmailAccountPortTitle,
+    text: LocalResourcesProvider.localized_data.EmailAccountPortText,
     attachTo: {
       element: '#port-area',
       on: 'bottom'
@@ -100,8 +100,8 @@
 
   //'Username' step
   tour.addStep({
-    title: LocalResourcesProvider.localized_data.EmailAccountsUsernameTitle,
-    text: LocalResourcesProvider.localized_data.EmailAccountsUsernameText,
+    title: LocalResourcesProvider.localized_data.EmailAccountUsernameTitle,
+    text: LocalResourcesProvider.localized_data.EmailAccountUsernameText,
     attachTo: {
       element: '#username-area',
       on: 'bottom'
@@ -111,8 +111,8 @@
 
   //'Password' step
   tour.addStep({
-    title: LocalResourcesProvider.localized_data.EmailAccountsPasswordTitle,
-    text: LocalResourcesProvider.localized_data.EmailAccountsPasswordText,
+    title: LocalResourcesProvider.localized_data.EmailAccountPasswordTitle,
+    text: LocalResourcesProvider.localized_data.EmailAccountPasswordText,
     attachTo: {
       element: '#password-area',
       on: 'bottom'
@@ -122,8 +122,8 @@
 
   //'SSL' step
   tour.addStep({
-    title: LocalResourcesProvider.localized_data.EmailAccountsUseSslTitle,
-    text: LocalResourcesProvider.localized_data.EmailAccountsUseSslText,
+    title: LocalResourcesProvider.localized_data.EmailAccountUseSslTitle,
+    text: LocalResourcesProvider.localized_data.EmailAccountUseSslText,
     attachTo: {
       element: '#ssl-area',
       on: 'bottom'
@@ -133,8 +133,8 @@
 
   //'Use default credentials' step
   tour.addStep({
-    title: LocalResourcesProvider.localized_data.EmailAccountsDefaultCredentialsTitle,
-    text: LocalResourcesProvider.localized_data.EmailAccountsDefaultCredentialsText,
+    title: LocalResourcesProvider.localized_data.EmailAccountDefaultCredentialsTitle,
+    text: LocalResourcesProvider.localized_data.EmailAccountDefaultCredentialsText,
     attachTo: {
       element: '#default-area',
       on: 'bottom'
@@ -144,8 +144,8 @@
 
   //'Send test email' step
   tour.addStep({
-    title: LocalResourcesProvider.localized_data.EmailAccountsTestEmailTitle,
-    text: LocalResourcesProvider.localized_data.EmailAccountsTestEmailText,
+    title: LocalResourcesProvider.localized_data.EmailAccountTestEmailTitle,
+    text: LocalResourcesProvider.localized_data.EmailAccountTestEmailText,
     attachTo: {
       element: '#test-email-area',
       on: 'bottom'
