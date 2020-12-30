@@ -56,8 +56,8 @@
 
   //'Title and content' step
   tour.addStep({
-    title: 'Title and content',
-    text: 'In these fields, enter a topic(page) title and it\'s content. This is what customers will see in the public store',
+    title: LocalResourcesProvider.localized_data.TopicTitleContentTitle,
+    text: LocalResourcesProvider.localized_data.TopicTitleContentText,
     attachTo: {
       element: '#info-area',
       on: 'bottom'
@@ -67,8 +67,8 @@
 
   //'Preview the page' step
   tour.addStep({
-    title: 'Preview the page',
-    text: 'To know how your customers will see the page, click the <b>Preview</b> button',
+    title: LocalResourcesProvider.localized_data.TopicPreviewTitle,
+    text: LocalResourcesProvider.localized_data.TopicPreviewText,
     attachTo: {
       element: '#preview-topic-button',
       on: 'bottom'

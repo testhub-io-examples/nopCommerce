@@ -422,8 +422,11 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.ConfigurationSteps.TaxProviders.PrimaryProvider.Text"] = "You can mark the desired tax provider as a primary one using the <b>Mark as primary provider</b> button.",
                 ["Admin.ConfigurationSteps.TaxProviders.Configure.Title"] = "Configure Manual",
                 ["Admin.ConfigurationSteps.TaxProviders.Configure.Text"] = "Now we\'ll configure the Manual tax provider. Click the <b>Edit</b> button to proceed to the plugin configuration page.",
-                [""] = "",
-                [""] = "",
+
+                ["Admin.ConfigurationSteps.Topic.TitleContent.Title"] = "Title and content",
+                ["Admin.ConfigurationSteps.Topic.TitleContent.Text"] = "Enter a topic (page) title and its content in this field. This is what customers will see in the public store.",
+                ["Admin.ConfigurationSteps.Topic.Preview.Title"] = "Preview the page",
+                ["Admin.ConfigurationSteps.Topic.Preview.Text"] = "To find out how your customers will see the page, click the <b>Preview</b> button.",
                 [""] = "",
                 [""] = "",
                 [""] = "",

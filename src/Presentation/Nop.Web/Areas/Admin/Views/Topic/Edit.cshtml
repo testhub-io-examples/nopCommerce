@@ -11,7 +11,24 @@
     {
         Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
         Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+        Html.AppendScriptParts("~/js/admintour/admin.tour.localresources.provider.js");
         Html.AppendScriptParts("~/js/admintour/admin.tour.topic.js");
+
+        <script asp-location="Footer">
+            var localized_data = {
+                Back: "@T("Admin.ConfigurationSteps.Back")",
+                Next: "@T("Admin.ConfigurationSteps.Next")",
+                Done: "@T("Admin.ConfigurationSteps.Done")",
+
+                TopicTitleContentTitle: "@T("Admin.ConfigurationSteps.Topic.TitleContent.Title")",
+                TopicTitleContentText: "@T("Admin.ConfigurationSteps.Topic.TitleContent.Text")",
+
+                TopicPreviewTitle: "@T("Admin.ConfigurationSteps.Topic.Preview.Title")",
+                TopicPreviewText: "@T("Admin.ConfigurationSteps.Topic.Preview.Text")",
+            };
+
+            LocalResourcesProvider.init(localized_data);
+        </script>
     }
 }
 
