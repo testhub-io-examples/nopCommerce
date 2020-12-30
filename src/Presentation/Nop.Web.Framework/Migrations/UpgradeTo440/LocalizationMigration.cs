@@ -343,7 +343,6 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.ConfigurationSteps.EmailAccountList.DefaultEmailAccount.Text"] = "Don\'t forget to mark one of the existing email accounts as a default one.",
                 ["Admin.ConfigurationSteps.EmailAccountList.Edit.Title"] = "Edit an email account",
                 ["Admin.ConfigurationSteps.EmailAccountList.Edit.Text"] = "To edit an email account click the <b>Edit</b> button.",
-
                 ["Admin.ConfigurationSteps.PaymentMethods.PaymentMethods.Title"] = "Payment methods",
                 ["Admin.ConfigurationSteps.PaymentMethods.PaymentMethods.Text"] = "You can see all the payment methods (plugins) allowed to use in your store on this page. However, you can always find much more in our marketplace.",
                 ["Admin.ConfigurationSteps.PaymentMethods.CheckMoney.Title"] = "Check/money order",
@@ -356,11 +355,20 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.ConfigurationSteps.PaymentMethods.Configure.Text"] = "You can configure each payment method by clicking the appropriate <b>Configure</b> button.",
 
 
-
-                [""] = "",
-                [""] = "",
-                [""] = "",
-                [""] = "",
+                ["Admin.ConfigurationSteps.Product.SettingsButton.Title"] = "\\\"Settings\\\" button",
+                ["Admin.ConfigurationSteps.Product.SettingsButton.Text"] = "This \\\"Settings\\\" button allows you to set up the basic mode to choose which fields you want to be shown exactly on the product edit page.",
+                ["Admin.ConfigurationSteps.Product.Details.Title"] = "Product details",
+                ["Admin.ConfigurationSteps.Product.Details.Text"] = "Enter the relevant product details in these fields. The screenshot below shows how they will be displayed on the product page with the default nopCommerce theme: <div><img src=\\\"../../js/admintour/images/product-page.jpg\\\"/></div>",
+                ["Admin.ConfigurationSteps.Product.Price.Title"] = "Product price",
+                ["Admin.ConfigurationSteps.Product.Price.Text"] = "Enter the product price in a predefined currency here. Read more on how to manage currencies <a href=\\\"https://docs.nopcommerce.com/getting-started/configure-payments/advanced-configuration/currencies.html\\\" target=\\\"_blank\\\">here</a>.",
+                ["Admin.ConfigurationSteps.Product.Tax.Title"] = "Product tax category",
+                ["Admin.ConfigurationSteps.Product.Tax.Text"] = "Select the product tax category or tick the <b>Tax exempt</b> if needed.",
+                ["Admin.ConfigurationSteps.Product.Shipping.Title"] = "Product shipping info",
+                ["Admin.ConfigurationSteps.Product.Shipping.Text"] = "Define product-specific shipping details in this panel.",
+                ["Admin.ConfigurationSteps.Product.Inventory.Title"] = "Product inventory",
+                ["Admin.ConfigurationSteps.Product.Inventory.Text"] = "Enter the product inventory info here. <br> <ul><li>The <b>Don\'t track inventory</b> option allows you to opt for no tracking</li><li>The <b>Track inventory</b> option is for those who don\'t have product variants and need to know just how many items are left</li><li>The <b>Track inventory by product attributes</b> option is best for you if you have different product attributes combinations and need to track their stock quantities</li></ul>",
+                ["Admin.ConfigurationSteps.Product.Pictures.Title"] = "Product pictures",
+                ["Admin.ConfigurationSteps.Product.Pictures.Text"] = "You can add pictures to your product after you save it for the first time. Click the <b>Save</b> button in the top right and then proceed to the pictures panel.",
                 [""] = "",
                 [""] = "",
                 [""] = "",

@@ -11,7 +11,39 @@
     {
         Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
         Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+        Html.AppendScriptParts("~/js/admintour/admin.tour.localresources.provider.js");
         Html.AppendScriptParts("~/js/admintour/admin.tour.product.js");
+
+    <script asp-location="Footer">
+            var localized_data = {
+                Back: "@T("Admin.ConfigurationSteps.Back")",
+                Next: "@T("Admin.ConfigurationSteps.Next")",
+                Done: "@T("Admin.ConfigurationSteps.Done")",
+
+                ProductSettingsButtonTitle: "@T("Admin.ConfigurationSteps.Product.SettingsButton.Title")",
+                ProductSettingsButtonText: "@T("Admin.ConfigurationSteps.Product.SettingsButton.Text")",
+
+                ProductDetailsTitle: "@T("Admin.ConfigurationSteps.Product.Details.Title")",
+                ProductDetailsText: "@T("Admin.ConfigurationSteps.Product.Details.Text")",
+
+                ProductPriceTitle: "@T("Admin.ConfigurationSteps.Product.Price.Title")",
+                ProductPriceText: "@T("Admin.ConfigurationSteps.Product.Price.Text")",
+
+                ProductTaxTitle: "@T("Admin.ConfigurationSteps.Product.Tax.Title")",
+                ProductTaxText: "@T("Admin.ConfigurationSteps.Product.Tax.Text")",
+
+                ProductShippingTitle: "@T("Admin.ConfigurationSteps.Product.Shipping.Title")",
+                ProductShippingText: "@T("Admin.ConfigurationSteps.Product.Shipping.Text")",
+
+                ProductInventoryTitle: "@T("Admin.ConfigurationSteps.Product.Inventory.Title")",
+                ProductInventoryText: "@T("Admin.ConfigurationSteps.Product.Inventory.Text")",
+
+                ProductPicturesTitle: "@T("Admin.ConfigurationSteps.Product.Pictures.Title")",
+                ProductPicturesText: "@T("Admin.ConfigurationSteps.Product.Pictures.Text")",
+            };
+
+            LocalResourcesProvider.init(localized_data);
+    </script>
     }
 }
 
