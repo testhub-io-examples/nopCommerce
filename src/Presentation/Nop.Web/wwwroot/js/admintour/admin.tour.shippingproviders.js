@@ -70,8 +70,8 @@
     }
 
     tour.addStep({
-      title: 'Shipping methods',
-      text: 'On this page you can see all the shipping providers (plugins) which allowed to use in your store. But you can always find much more in our <a href="https://www.nopcommerce.com/extensions?category=shipping-delivery" target="_blank">marketplace</a>',
+      title: LocalResourcesProvider.localized_data.ShippingProvidersProvidersTitle,
+      text: LocalResourcesProvider.localized_data.ShippingProvidersProvidersText,
       attachTo: {
         element: '#shipping-methods-area',
         on: 'bottom'
@@ -82,8 +82,8 @@
     //'Manual shipping provider' step
     if (manualMethodExists) {
       tour.addStep({
-        title: 'Manual shipping provider',
-        text: 'By default, the only active shipping plugin is the <b>Manual</b>. This provider allows you to configure shipping methods and rates manually',
+        title: LocalResourcesProvider.localized_data.ShippingProvidersManualTitle,
+        text: LocalResourcesProvider.localized_data.ShippingProvidersManualText,
         attachTo: {
           element: '#' + manualMethodRowId,
           on: 'bottom'
@@ -102,8 +102,8 @@
       }
 
       tour.addStep({
-        title: 'ShipStation',
-        text: 'If you want to provide more accurate shipping rates, we recommend you to use shipping services such as <b>ShipStation</b>. Read how to configure it in <a href="https://docs.nopcommerce.com/getting-started/configure-shipping/shipping-providers/shipstation.html" target="_blank">this article</a>',
+        title: LocalResourcesProvider.localized_data.ShippingProvidersShipStationTitle,
+        text: LocalResourcesProvider.localized_data.ShippingProvidersShipStationText,
         attachTo: {
           element: '#' + shipStationMethodRowId,
           on: 'bottom'
@@ -115,8 +115,8 @@
     //Redirect to Manual
     if (manualMethodExists) {
       tour.addStep({
-        title: 'Configure Manual',
-        text: 'Now we\'ll configure the <b>Manual</b> shipping provider. Click this button to proceed to the plugin configuration page',
+        title: LocalResourcesProvider.localized_data.ShippingProvidersConfigureTitle,
+        text: LocalResourcesProvider.localized_data.ShippingProvidersConfigureText,
         attachTo: {
           element: '#' + manualMethodRowId + ' .column-configure .btn-default',
           on: 'bottom'

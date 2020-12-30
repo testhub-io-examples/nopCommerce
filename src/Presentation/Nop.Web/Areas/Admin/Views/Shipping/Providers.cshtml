@@ -12,9 +12,32 @@
     {
         Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
         Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+        Html.AppendScriptParts("~/js/admintour/admin.tour.localresources.provider.js");
         Html.AppendScriptParts("~/js/admintour/admin.tour.shippingproviders.js");
 
         editQueryString = "?showtour=true";
+
+        <script asp-location="Footer">
+            var localized_data = {
+                Back: "@T("Admin.ConfigurationSteps.Back")",
+                Next: "@T("Admin.ConfigurationSteps.Next")",
+                Done: "@T("Admin.ConfigurationSteps.Done")",
+
+                ShippingProvidersProvidersTitle: "@T("Admin.ConfigurationSteps.ShippingProviders.Providers.Title")",
+                ShippingProvidersProvidersText: "@T("Admin.ConfigurationSteps.ShippingProviders.Providers.Text")",
+
+                ShippingProvidersManualTitle: "@T("Admin.ConfigurationSteps.ShippingProviders.Manual.Title")",
+                ShippingProvidersManualText: "@T("Admin.ConfigurationSteps.ShippingProviders.Manual.Text")",
+
+                ShippingProvidersShipStationTitle: "@T("Admin.ConfigurationSteps.ShippingProviders.ShipStation.Title")",
+                ShippingProvidersShipStationText: "@T("Admin.ConfigurationSteps.ShippingProviders.ShipStation.Text")",
+
+                ShippingProvidersConfigureTitle: "@T("Admin.ConfigurationSteps.ShippingProviders.Configure.Title")",
+                ShippingProvidersConfigureText: "@T("Admin.ConfigurationSteps.ShippingProviders.Configure.Text")",
+            };
+
+            LocalResourcesProvider.init(localized_data);
+        </script>
     }
 }
 

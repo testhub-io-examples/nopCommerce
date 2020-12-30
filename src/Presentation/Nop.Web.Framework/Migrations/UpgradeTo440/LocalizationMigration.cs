@@ -384,8 +384,15 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.ConfigurationSteps.ConfigureManual.Manage.Title"] = "Manage shipping methods",
                 ["Admin.ConfigurationSteps.ConfigureManual.Manage.Text"] = "Using this button, you can add new shipping methods or delete the existing ones.",
 
-                [""] = "",
-                [""] = "",
+                ["Admin.ConfigurationSteps.ShippingProviders.Providers.Title"] = "Shipping providers",
+                ["Admin.ConfigurationSteps.ShippingProviders.Providers.Text"] = "You can see all the shipping providers (plugins) allowed to use in your store on this page. However, you can always find much more in our <a href=\\\"https://www.nopcommerce.com/extensions?category=shipping-delivery\\\" target=\\\"_blank\\\">marketplace</a>.",
+                ["Admin.ConfigurationSteps.ShippingProviders.Manual.Title"] = "Manual shipping provider",
+                ["Admin.ConfigurationSteps.ShippingProviders.Manual.Text"] = "The only active shipping plugin by default is <b>Manual</b>. This provider allows you to configure shipping methods and rates manually.",
+                ["Admin.ConfigurationSteps.ShippingProviders.ShipStation.Title"] = "ShipStation",
+                ["Admin.ConfigurationSteps.ShippingProviders.ShipStation.Text"] = "If you want to provide more accurate shipping rates, we recommend using shipping services such as ShipStation. Read how to configure it in <a href=\\\"https://docs.nopcommerce.com/getting-started/configure-shipping/shipping-providers/shipstation.html\\\" target=\\\"_blank\\\">this article</a>.",
+                ["Admin.ConfigurationSteps.ShippingProviders.Configure.Title"] = "Configure Manual",
+                ["Admin.ConfigurationSteps.ShippingProviders.Configure.Text"] = "Now we\'ll configure the Manual shipping provider. Click this button to proceed to the plugin configuration page.",
+
                 [""] = "",
                 [""] = "",
                 [""] = "",
