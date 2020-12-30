@@ -284,6 +284,88 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 //#5213
                 ["Admin.System.Log.List.PremiumSupport"] = "Have questions or need help? Get dedicated support from the nopCommerce team with a guaranteed response within 24 hours. Please find more about our premium support services <a href=\"https://www.nopcommerce.com/nopcommerce-premium-support-services?utm_source=admin-panel&utm_medium=menu&utm_campaign=premium_support&utm_content=log-list\" target=\"_blank\">here</a>.",
                 ["Admin.System.Log.PremiumSupport"] = "Have questions or need help? Get dedicated support from the nopCommerce team with a guaranteed response within 24 hours. Please find more about our premium support services <a href=\"https://www.nopcommerce.com/nopcommerce-premium-support-services?utm_source=admin-panel&utm_medium=menu&utm_campaign=premium_support&utm_content=log-details\" target=\"_blank\">here</a>.",
+
+
+
+
+
+
+
+
+
+
+
+                ["Admin.ConfigurationSteps"] = "Start accepting orders",
+                ["Admin.ConfigurationSteps.Welcome.Title"] = "Welcome to your store!",
+                ["Admin.ConfigurationSteps.Welcome.Text"] = "Can't wait to start accepting orders? Let us show you how to set up your store fast and easy. The steps below describe the most important settings for the online shop. With our tips on each page you will see how clear this process is. You will be ready to start selling immediately after you go through these steps. So good luck!",
+                ["Admin.ConfigurationSteps.PersonalizeStore.Title"] = "Personalize your store",
+                ["Admin.ConfigurationSteps.PersonalizeStore.Description"] = "Choose a beautiful theme for your store and add your logo",
+                ["Admin.ConfigurationSteps.AddStoreInfo.Title"] = "Add your store info",
+                ["Admin.ConfigurationSteps.AddStoreInfo.Description"] = "Enter your store details and protect your customers using SSL",
+                ["Admin.ConfigurationSteps.SetUpShipping.Title"] = "Set up shipping",
+                ["Admin.ConfigurationSteps.SetUpShipping.Description"] = "Set up shipping methods to deliver orders to customers",
+                ["Admin.ConfigurationSteps.SetUpPayments.Title"] = "Set up payments",
+                ["Admin.ConfigurationSteps.SetUpPayments.Description"] = "Choose how your customers will pay for their orders",
+                ["Admin.ConfigurationSteps.SetUpTaxes.Title"] = "Set up taxes",
+                ["Admin.ConfigurationSteps.SetUpTaxes.Description"] = "Configure rates manually or choose a tax service to automate all tax things",
+                ["Admin.ConfigurationSteps.CreateProducts.Title"] = "Create products",
+                ["Admin.ConfigurationSteps.CreateProducts.Description"] = "Build a catalog with attractive product descriptions and pictures",
+                ["Admin.ConfigurationSteps.CreateEmailAccounts.Title"] = "Set up email accounts",
+                ["Admin.ConfigurationSteps.CreateEmailAccounts.Description"] = "It allows you to send notifications to your customers",
+                ["Admin.ConfigurationSteps.EditServicesInfo.Title"] = "Edit services info",
+                ["Admin.ConfigurationSteps.EditServicesInfo.Description"] = "Add info pages describing shipping, return policy and more",
+                ["Admin.ConfigurationSteps.PoweredBy.Title"] = "\"Powered by\" link",
+                ["Admin.ConfigurationSteps.PoweredBy.Description"] = "Remove the \"Powered by nopCommerce\" link from the footer",
+
+
+
+
+
+
+                ["Admin.ConfigurationSteps.Back"] = "Back",
+                ["Admin.ConfigurationSteps.Next"] = "Next",
+                ["Admin.ConfigurationSteps.Done"] = "Done",
+                ["Admin.ConfigurationSteps.PersonalizeStore.Intro.Title"] = "Configuration tour",
+                ["Admin.ConfigurationSteps.PersonalizeStore.Intro.Text"] = "Let us help you to configure your store! We will share a few tips, describing the most important fields for the initial configuration.",
+                ["Admin.ConfigurationSteps.PersonalizeStore.BasicAdvanced.Title"] = "\"Basic/Advanced\" modes",
+                ["Admin.ConfigurationSteps.PersonalizeStore.BasicAdvanced.Text"] = "This two-position <b>Basic/Advanced</b> switch allows you to switch between the page display modes. For convenience of use, the most frequent settings are shown in the Basic mode. If you cannot find a required setting on a page, switch to the Advanced mode to see all the available settings.",
+                ["Admin.ConfigurationSteps.PersonalizeStore.Theme.Title"] = "Choose a theme",
+                ["Admin.ConfigurationSteps.PersonalizeStore.Theme.Text"] = "On this page, you can set up your store theme. After you choose a theme on our <a href=\"https://www.nopcommerce.com/marketplace\" target=\"_blank\">marketplace</a>, upload it on your site following <a href=\"https://docs.nopcommerce.com/getting-started/design-your-store/choose-and-install-a-theme.html\"  target=\"_blank\">these instructions</a>. Then refresh this page, and you will see all the available themes. Choose one and click the <b>Save</b> button in the top right.",
+                ["Admin.ConfigurationSteps.PersonalizeStore.Logo.Title"] = "Upload your logo",
+                ["Admin.ConfigurationSteps.PersonalizeStore.Logo.Text"] = "In this field, click the <b>Upload a file</b> button, then choose your logo file.",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+                [""] = "",
+
             }).Wait();
 
             // rename locales

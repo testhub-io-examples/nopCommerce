@@ -31,23 +31,23 @@
 
   //'Welcome' step
   tour.addStep({
-    title: 'Configuration tour',
-    text: 'Let us help you to configure your store! We will show you a few tips describing the most important fields for the initial configuration. During this tour, you can immediately click and edit the highlighted fields.',
+    title: LocalResourcesProvider.localized_data.PersonalizeStoreIntroTitle,
+    text: LocalResourcesProvider.localized_data.PersonalizeStoreIntroText,
     buttons: [
       {
         action() {
           return tour.next();
         },
         classes: 'button-next',
-        text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
+        text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
       }
     ]
   });
 
   //'Basic/Advanced mode' step
   tour.addStep({
-    title: 'Basic-Advanced mode',
-    text: 'This two-position "Basic-Advanced" switch allows you to switch between page display modes. For the convenience of use, we made the Basic mode where the most frequent settings are shown. If you cannot find a required setting on a page, switch to the Advanced mode to see all available settings.',
+    title: LocalResourcesProvider.localized_data.PersonalizeStoreBasicAdvancedTitle,
+    text: LocalResourcesProvider.localized_data.PersonalizeStoreBasicAdvancedText,
     attachTo: {
       element: '.onoffswitch',
       on: 'bottom'
@@ -58,22 +58,22 @@
           return tour.back();
         },
         classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
+        text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
       },
       {
         action() {
           return tour.next();
         },
         classes: 'button-next',
-        text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
+        text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
       }
     ]
   });
 
   //'Choose a theme' step
   tour.addStep({
-    title: 'Choose a theme',
-    text: 'On this page, you can set up a store theme. After you choose a theme on our <a href="https://www.nopcommerce.com/marketplace" target="_blank">marketplace</a>, upload it on your site following <a href="https://docs.nopcommerce.com/getting-started/design-your-store/choose-and-install-a-theme.html"  target="_blank">these instructions</a>. Then refresh this page and you will see all the allowed themes. Choose one and click the "Save" button in the top right.',
+    title: LocalResourcesProvider.localized_data.PersonalizeStoreThemeTitle,
+    text: LocalResourcesProvider.localized_data.PersonalizeStoreThemeText,
     attachTo: {
       element: '#theme-area',
       on: 'bottom'
@@ -84,22 +84,22 @@
           return tour.back();
         },
         classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
+        text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
       },
       {
         action() {
           return tour.next();
         },
         classes: 'button-next',
-        text: 'Next &nbsp; <i class="fa fa-arrow-right"></i>'
+        text: LocalResourcesProvider.localized_data.Next + ' &nbsp; <i class="fa fa-arrow-right"></i>'
       }
     ],
   });
 
   //'Upload your logo' step
   tour.addStep({
-    title: 'Upload your logo',
-    text: 'In this field, click the "Upload a file" button, then choose your logo file.',
+    title: LocalResourcesProvider.localized_data.PersonalizeStoreLogoTitle,
+    text: LocalResourcesProvider.localized_data.PersonalizeStoreLogoText,
     attachTo: {
       element: '#logo-area',
       on: 'bottom'
@@ -110,14 +110,14 @@
           return tour.back();
         },
         classes: 'button-back',
-        text: '<i class="fa fa-arrow-left"></i> &nbsp; Back'
+        text: '<i class="fa fa-arrow-left"></i> &nbsp; ' + LocalResourcesProvider.localized_data.Back
       },
       {
         action() {
           return tour.cancel();
         },
         classes: 'button-done',
-        text: 'Done',
+        text: LocalResourcesProvider.localized_data.Done,
         secondary: true
       }
     ],
