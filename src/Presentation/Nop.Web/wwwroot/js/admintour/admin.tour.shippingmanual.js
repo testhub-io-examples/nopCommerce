@@ -61,8 +61,8 @@
 
     //'Fixed Rate/By Weight' switch steps
     tour.addStep({
-      title: 'Fixed rate/By weight switch',
-      text: 'The <b>Fixed rate/By weight switch</b> allows you to choose the type of shipping rates you\'d like to use in your store <br> <i>*We set this switch to the "Fixed rate" value and disabled for the guide purposes</i>',
+      title: LocalResourcesProvider.localized_data.ConfigureManualSwitchTitle,
+      text: LocalResourcesProvider.localized_data.ConfigureManualSwitchText,
       canClickTarget: false,
       attachTo: {
         element: '.onoffswitch',
@@ -72,8 +72,8 @@
     });
 
     tour.addStep({
-      title: '"Fixed rate" option',
-      text: 'The <b>fixed shipping rate</b> option allows you to set shipping cost depending on the shipping method',
+      title: LocalResourcesProvider.localized_data.ConfigureManualFixedRateTitle,
+      text: LocalResourcesProvider.localized_data.ConfigureManualFixedRateText,
       attachTo: {
         element: '.onoffswitch',
         on: 'bottom'
@@ -82,8 +82,8 @@
     });
 
     tour.addStep({
-      title: '"By weight" option',
-      text: 'The <b>shipping by weight and by total</b> option allows setting different shipping fees based on shipment weight and total',
+      title: LocalResourcesProvider.localized_data.ConfigureManualByWeightTitle,
+      text: LocalResourcesProvider.localized_data.ConfigureManualByWeightText,
       attachTo: {
         element: '.onoffswitch',
         on: 'bottom'
@@ -94,8 +94,8 @@
 
     //'Shipping methods' step
     tour.addStep({
-      title: 'Shipping methods',
-      text: 'This table contains shipping methods used by offline shipping providers. There are a few shipping methods created automatically during the installation process',
+      title: LocalResourcesProvider.localized_data.ConfigureManualMethodsTitle,
+      text: LocalResourcesProvider.localized_data.ConfigureManualMethodsText,
       attachTo: {
         element: '#shipping-rate-grid_wrapper',
         on: 'bottom'
@@ -108,8 +108,8 @@
 
     if ($('#' + firstEditButtonId).length) {
       tour.addStep({
-        title: 'Edit rate',
-        text: 'Click the <b>Edit</b> button to edit a rate for the certain shipping method',
+        title: LocalResourcesProvider.localized_data.ConfigureManualEditTitle,
+        text: LocalResourcesProvider.localized_data.ConfigureManualEditText,
         attachTo: {
           element: '#' + firstEditButtonId,
           on: 'bottom'
@@ -121,8 +121,8 @@
 
     //'Manage shipping methods' step
     tour.addStep({
-      title: 'Manage shipping methods',
-      text: 'Using the <b>Manage shipping methods</b> button you can add new shipping methods or delete the existing ones',
+      title: LocalResourcesProvider.localized_data.ConfigureManualManageTitle,
+      text: LocalResourcesProvider.localized_data.ConfigureManualManageText,
       attachTo: {
         element: '#manage-shipping-methods-button',
         on: 'bottom'

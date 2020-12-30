@@ -7,7 +7,36 @@
     {
         Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
         Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+        Html.AppendScriptParts("~/js/admintour/admin.tour.localresources.provider.js");
         Html.AppendScriptParts("~/js/admintour/admin.tour.shippingmanual.js");
+
+        <script asp-location="Footer">
+            var localized_data = {
+                Back: "@T("Admin.ConfigurationSteps.Back")",
+                Next: "@T("Admin.ConfigurationSteps.Next")",
+                Done: "@T("Admin.ConfigurationSteps.Done")",
+
+                ConfigureManualSwitchTitle: "@T("Admin.ConfigurationSteps.ConfigureManual.Switch.Title")",
+                ConfigureManualSwitchText: "@T("Admin.ConfigurationSteps.ConfigureManual.Switch.Text")",
+
+                ConfigureManualFixedRateTitle: "@T("Admin.ConfigurationSteps.ConfigureManual.FixedRate.Title")",
+                ConfigureManualFixedRateText: "@T("Admin.ConfigurationSteps.ConfigureManual.FixedRate.Text")",
+
+                ConfigureManualByWeightTitle: "@T("Admin.ConfigurationSteps.ConfigureManual.ByWeight.Title")",
+                ConfigureManualByWeightText: "@T("Admin.ConfigurationSteps.ConfigureManual.ByWeight.Text")",
+
+                ConfigureManualMethodsTitle: "@T("Admin.ConfigurationSteps.ConfigureManual.Methods.Title")",
+                ConfigureManualMethodsText: "@T("Admin.ConfigurationSteps.ConfigureManual.Methods.Text")",
+
+                ConfigureManualEditTitle: "@T("Admin.ConfigurationSteps.ConfigureManual.Edit.Title")",
+                ConfigureManualEditText: "@T("Admin.ConfigurationSteps.ConfigureManual.Edit.Text")",
+
+                ConfigureManualManageTitle: "@T("Admin.ConfigurationSteps.ConfigureManual.Manage.Title")",
+                ConfigureManualManageText: "@T("Admin.ConfigurationSteps.ConfigureManual.Manage.Text")",
+            };
+
+            LocalResourcesProvider.init(localized_data);
+        </script>
     }
 }
 

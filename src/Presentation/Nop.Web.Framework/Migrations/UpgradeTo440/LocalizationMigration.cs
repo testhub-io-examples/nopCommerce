@@ -353,8 +353,6 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.ConfigurationSteps.PaymentMethods.PayPal.Text"] = "If you want to process payments online, we'd recommend you to set up the PayPal Smart Payment Buttons payment method. PayPal Checkout with Smart Payment Buttons gives your buyers a simplified and secure checkout experience. Read more about how to set this plugin <a href=\\\"https://docs.nopcommerce.com/getting-started/configure-payments/payment-methods/paypal-smart-payment-buttons.html\\\" target=\\\"_blank\\\">here</a>.",
                 ["Admin.ConfigurationSteps.PaymentMethods.Configure.Title"] = "Configure a payment method",
                 ["Admin.ConfigurationSteps.PaymentMethods.Configure.Text"] = "You can configure each payment method by clicking the appropriate <b>Configure</b> button.",
-
-
                 ["Admin.ConfigurationSteps.Product.SettingsButton.Title"] = "\\\"Settings\\\" button",
                 ["Admin.ConfigurationSteps.Product.SettingsButton.Text"] = "This \\\"Settings\\\" button allows you to set up the basic mode to choose which fields you want to be shown exactly on the product edit page.",
                 ["Admin.ConfigurationSteps.Product.Details.Title"] = "Product details",
@@ -369,8 +367,23 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.ConfigurationSteps.Product.Inventory.Text"] = "Enter the product inventory info here. <br> <ul><li>The <b>Don\'t track inventory</b> option allows you to opt for no tracking</li><li>The <b>Track inventory</b> option is for those who don\'t have product variants and need to know just how many items are left</li><li>The <b>Track inventory by product attributes</b> option is best for you if you have different product attributes combinations and need to track their stock quantities</li></ul>",
                 ["Admin.ConfigurationSteps.Product.Pictures.Title"] = "Product pictures",
                 ["Admin.ConfigurationSteps.Product.Pictures.Text"] = "You can add pictures to your product after you save it for the first time. Click the <b>Save</b> button in the top right and then proceed to the pictures panel.",
-                [""] = "",
-                [""] = "",
+
+
+
+
+                ["Admin.ConfigurationSteps.ConfigureManual.Switch.Title"] = "\\\"Fixed rate/By weight\\\" switch",
+                ["Admin.ConfigurationSteps.ConfigureManual.Switch.Text"] = "The \\\"Fixed rate/By weight\\\" switch allows you to choose the type of shipping rates you\'d like to use in your store.",
+                ["Admin.ConfigurationSteps.ConfigureManual.FixedRate.Title"] = "\\\"Fixed rate\\\" option",
+                ["Admin.ConfigurationSteps.ConfigureManual.FixedRate.Text"] = "The fixed shipping rate option allows you to set shipping cost depending on the shipping method.",
+                ["Admin.ConfigurationSteps.ConfigureManual.ByWeight.Title"] = "\\\"By weight\\\" option",
+                ["Admin.ConfigurationSteps.ConfigureManual.ByWeight.Text"] = "The shipping by weight and by total options allow setting different shipping fees based on shipment weight and total.",
+                ["Admin.ConfigurationSteps.ConfigureManual.Methods.Title"] = "Shipping methods",
+                ["Admin.ConfigurationSteps.ConfigureManual.Methods.Text"] = "This table contains shipping methods used by offline shipping providers. A few shipping methods are created automatically during the installation process.",
+                ["Admin.ConfigurationSteps.ConfigureManual.Edit.Title"] = "Edit rate",
+                ["Admin.ConfigurationSteps.ConfigureManual.Edit.Text"] = "Click the <b>Edit</b> button to edit a rate for a specific shipping method.",
+                ["Admin.ConfigurationSteps.ConfigureManual.Manage.Title"] = "Manage shipping methods",
+                ["Admin.ConfigurationSteps.ConfigureManual.Manage.Text"] = "Using this button, you can add new shipping methods or delete the existing ones.",
+
                 [""] = "",
                 [""] = "",
                 [""] = "",
