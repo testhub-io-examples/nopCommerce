@@ -57,8 +57,8 @@
 
     //'Topics (pages)' step
     tour.addStep({
-      title: 'Topics (pages)',
-      text: 'Topics (pages) are free-form content blocks that can be displayed on your site, either embedded within other pages or on a page of their own. These are often used for FAQ pages, policy pages, special instructions, and so on',
+      title: LocalResourcesProvider.localized_data.TopicListTopics1Title,
+      text: LocalResourcesProvider.localized_data.TopicListTopics1Text,
       attachTo: {
         element: '#topics-area',
         on: 'bottom'
@@ -68,8 +68,8 @@
 
     //'Topics (pages)' step
     tour.addStep({
-      title: 'Topics (pages)',
-      text: 'In this table you can see a list of the topics created by default',
+      title: LocalResourcesProvider.localized_data.TopicListTopics2Title,
+      text: LocalResourcesProvider.localized_data.TopicListTopics2Text,
       attachTo: {
         element: '#topics-area',
         on: 'bottom'
@@ -81,8 +81,8 @@
 
     //'Shipping info' step
     tour.addStep({
-      title: 'Shipping info',
-      text: 'For example, this is a <b>shipping info</b> topic. It contains shipping information that customers can access by clicking the appropriate link in your store',
+      title: LocalResourcesProvider.localized_data.TopicListShippingTitle,
+      text: LocalResourcesProvider.localized_data.TopicListShippingText,
       attachTo: {
         element: '#' + shippingTopicRowId,
         on: 'bottom'
@@ -92,8 +92,8 @@
 
     //'Link location' step
     tour.addStep({
-      title: 'Page link location',
-      text: 'As you can see, this topic is included in the first column of the footer',
+      title: LocalResourcesProvider.localized_data.TopicListLocationTitle,
+      text: LocalResourcesProvider.localized_data.TopicListLocationText,
       attachTo: {
         element: '#' + shippingTopicRowId + ' .column-footer-column1',
         on: 'bottom'
@@ -103,8 +103,8 @@
 
     //'Edit the page' step
     tour.addStep({
-      title: 'Edit the page',
-      text: 'To edit this page click this <b>Edit</b> button. You can also create a new topic by clicking the <b>Add new</b> button at the top of the page',
+      title: LocalResourcesProvider.localized_data.TopicListEditTitle,
+      text: LocalResourcesProvider.localized_data.TopicListEditText,
       attachTo: {
         element: '#' + shippingTopicRowId + ' .column-edit .btn',
         on: 'bottom'

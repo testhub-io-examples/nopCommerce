@@ -12,14 +12,40 @@
   {
       Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
       Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+      Html.AppendScriptParts("~/js/admintour/admin.tour.localresources.provider.js");
       Html.AppendScriptParts("~/js/admintour/admin.tour.topiclist.js");
 
       editQueryString = "?showtour=true";
-  }
 
-  const string hideSearchBlockAttributeName = "TopicsPage.HideSearchBlock";
-  var hideSearchBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideSearchBlockAttributeName);
-}
+    <script asp-location="Footer">
+            var localized_data = {
+                Back: "@T("Admin.ConfigurationSteps.Back")",
+                Next: "@T("Admin.ConfigurationSteps.Next")",
+                Done: "@T("Admin.ConfigurationSteps.Done")",
+
+                TopicListTopics1Title: "@T("Admin.ConfigurationSteps.TopicList.Topics1.Title")",
+                TopicListTopics1Text: "@T("Admin.ConfigurationSteps.TopicList.Topics1.Text")",
+
+                TopicListTopics2Title: "@T("Admin.ConfigurationSteps.TopicList.Topics2.Title")",
+                TopicListTopics2Text: "@T("Admin.ConfigurationSteps.TopicList.Topics2.Text")",
+
+                TopicListShippingTitle: "@T("Admin.ConfigurationSteps.TopicList.Shipping.Title")",
+                TopicListShippingText: "@T("Admin.ConfigurationSteps.TopicList.Shipping.Text")",
+
+                TopicListLocationTitle: "@T("Admin.ConfigurationSteps.TopicList.Location.Title")",
+                TopicListLocationText: "@T("Admin.ConfigurationSteps.TopicList.Location.Text")",
+
+                TopicListEditTitle: "@T("Admin.ConfigurationSteps.TopicList.Edit.Title")",
+                TopicListEditText: "@T("Admin.ConfigurationSteps.TopicList.Edit.Text")",
+            };
+
+            LocalResourcesProvider.init(localized_data);
+    </script>
+      }
+
+      const string hideSearchBlockAttributeName = "TopicsPage.HideSearchBlock";
+      var hideSearchBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideSearchBlockAttributeName);
+  }
 
 <div class="content-header clearfix">
     <h1 class="pull-left">

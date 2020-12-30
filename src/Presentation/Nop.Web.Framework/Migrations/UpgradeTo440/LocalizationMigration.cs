@@ -367,10 +367,6 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.ConfigurationSteps.Product.Inventory.Text"] = "Enter the product inventory info here. <br> <ul><li>The <b>Don\'t track inventory</b> option allows you to opt for no tracking</li><li>The <b>Track inventory</b> option is for those who don\'t have product variants and need to know just how many items are left</li><li>The <b>Track inventory by product attributes</b> option is best for you if you have different product attributes combinations and need to track their stock quantities</li></ul>",
                 ["Admin.ConfigurationSteps.Product.Pictures.Title"] = "Product pictures",
                 ["Admin.ConfigurationSteps.Product.Pictures.Text"] = "You can add pictures to your product after you save it for the first time. Click the <b>Save</b> button in the top right and then proceed to the pictures panel.",
-
-
-
-
                 ["Admin.ConfigurationSteps.ConfigureManual.Switch.Title"] = "\\\"Fixed rate/By weight\\\" switch",
                 ["Admin.ConfigurationSteps.ConfigureManual.Switch.Text"] = "The \\\"Fixed rate/By weight\\\" switch allows you to choose the type of shipping rates you\'d like to use in your store.",
                 ["Admin.ConfigurationSteps.ConfigureManual.FixedRate.Title"] = "\\\"Fixed rate\\\" option",
@@ -383,7 +379,6 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.ConfigurationSteps.ConfigureManual.Edit.Text"] = "Click the <b>Edit</b> button to edit a rate for a specific shipping method.",
                 ["Admin.ConfigurationSteps.ConfigureManual.Manage.Title"] = "Manage shipping methods",
                 ["Admin.ConfigurationSteps.ConfigureManual.Manage.Text"] = "Using this button, you can add new shipping methods or delete the existing ones.",
-
                 ["Admin.ConfigurationSteps.ShippingProviders.Providers.Title"] = "Shipping providers",
                 ["Admin.ConfigurationSteps.ShippingProviders.Providers.Text"] = "You can see all the shipping providers (plugins) allowed to use in your store on this page. However, you can always find much more in our <a href=\\\"https://www.nopcommerce.com/extensions?category=shipping-delivery\\\" target=\\\"_blank\\\">marketplace</a>.",
                 ["Admin.ConfigurationSteps.ShippingProviders.Manual.Title"] = "Manual shipping provider",
@@ -392,15 +387,12 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.ConfigurationSteps.ShippingProviders.ShipStation.Text"] = "If you want to provide more accurate shipping rates, we recommend using shipping services such as ShipStation. Read how to configure it in <a href=\\\"https://docs.nopcommerce.com/getting-started/configure-shipping/shipping-providers/shipstation.html\\\" target=\\\"_blank\\\">this article</a>.",
                 ["Admin.ConfigurationSteps.ShippingProviders.Configure.Title"] = "Configure Manual",
                 ["Admin.ConfigurationSteps.ShippingProviders.Configure.Text"] = "Now we\'ll configure the Manual shipping provider. Click this button to proceed to the plugin configuration page.",
-
                 ["Admin.ConfigurationSteps.Store.Name.Title"] = "Your store name",
                 ["Admin.ConfigurationSteps.Store.Name.Text"] = "Enter your store name in this field. It will be displayed, for instance, in the newsletter and notification emails sent to your customers.",
                 ["Admin.ConfigurationSteps.Store.Url.Title"] = "Your store URL",
                 ["Admin.ConfigurationSteps.Store.Url.Text"] = "Enter your store URL in this field. For example, it could be http://www.yourstore.com/ or https://www.yourstore.com/mystore/ if you installed your store in a subdirectory.",
                 ["Admin.ConfigurationSteps.Store.Ssl.Title"] = "Enable SSL",
                 ["Admin.ConfigurationSteps.Store.Ssl.Text"] = "If you already have an SSL certificate installed on the server, enable SSL to protect your customers\' data. <b>Do not enable it if you don\'t have an SSL certificate installed yet!</b> SSL Certificates provide customer trust and improve site rankings. Note that some online payment methods require an SSL certificate installed for correct working. Read how to install and configure SSL certification <a href=\\\"https://docs.nopcommerce.com/getting-started/advanced-configuration/how-to-install-and-configure-ssl-certification.html\\\" target=\\\"_blank\\\">here</a>.",
-
-
                 ["Admin.ConfigurationSteps.TaxManual.Switch.Title"] = "\\\"Fixed rate/By country\\\" switch",
                 ["Admin.ConfigurationSteps.TaxManual.Switch.Text"] = "The \\\"Fixed rate/By country\\\" switch allows you to choose the type of tax rates you\'d like to use in your store.",
                 ["Admin.ConfigurationSteps.TaxManual.Fixed.Title"] = "\\\"Fixed rate\\\" option",
@@ -411,7 +403,6 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.ConfigurationSteps.TaxManual.Categories.Text"] = "This table contains tax categories used by offline tax providers. A few tax categories are created automatically during the installation process.",
                 ["Admin.ConfigurationSteps.TaxManual.Edit.Title"] = "Edit tax rate",
                 ["Admin.ConfigurationSteps.TaxManual.Edit.Text"] = "Click the <b>Edit</b> button to edit a tax rate for the specific tax category.",
-
                 ["Admin.ConfigurationSteps.TaxProviders.TaxProviders.Title"] = "Tax providers",
                 ["Admin.ConfigurationSteps.TaxProviders.TaxProviders.Text"] = "You can see all the tax providers (plugins) allowed to use in your store on this page. However, you can always find much more in our <a href=\\\"https://www.nopcommerce.com/extensions?category=taxes\\\" target=\\\"_blank\\\">marketplace</a>.",
                 ["Admin.ConfigurationSteps.TaxProviders.Avalara.Title"] = "Avalara tax provider",
@@ -422,25 +413,20 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.ConfigurationSteps.TaxProviders.PrimaryProvider.Text"] = "You can mark the desired tax provider as a primary one using the <b>Mark as primary provider</b> button.",
                 ["Admin.ConfigurationSteps.TaxProviders.Configure.Title"] = "Configure Manual",
                 ["Admin.ConfigurationSteps.TaxProviders.Configure.Text"] = "Now we\'ll configure the Manual tax provider. Click the <b>Edit</b> button to proceed to the plugin configuration page.",
-
                 ["Admin.ConfigurationSteps.Topic.TitleContent.Title"] = "Title and content",
                 ["Admin.ConfigurationSteps.Topic.TitleContent.Text"] = "Enter a topic (page) title and its content in this field. This is what customers will see in the public store.",
                 ["Admin.ConfigurationSteps.Topic.Preview.Title"] = "Preview the page",
                 ["Admin.ConfigurationSteps.Topic.Preview.Text"] = "To find out how your customers will see the page, click the <b>Preview</b> button.",
-                [""] = "",
-                [""] = "",
-                [""] = "",
-                [""] = "",
-                [""] = "",
-                [""] = "",
-                [""] = "",
-                [""] = "",
-                [""] = "",
-                [""] = "",
-                [""] = "",
-                [""] = "",
-                [""] = "",
-
+                ["Admin.ConfigurationSteps.TopicList.Topics1.Title"] = "Topics (pages)",
+                ["Admin.ConfigurationSteps.TopicList.Topics1.Text"] = "Topics (pages) are free-form content blocks that can be displayed on your site, either embedded within other pages or on their own pages. They are often used for FAQ pages, policy pages, special instructions, and more.",
+                ["Admin.ConfigurationSteps.TopicList.Topics2.Title"] = "Topics (pages)",
+                ["Admin.ConfigurationSteps.TopicList.Topics2.Text"] = "In this table, you can see a list of the topics created by default.",
+                ["Admin.ConfigurationSteps.TopicList.Shipping.Title"] = "Shipping info",
+                ["Admin.ConfigurationSteps.TopicList.Shipping.Text"] = "For example, this is a shipping info topic. It contains shipping information that customers can access by clicking the appropriate link in your store.",
+                ["Admin.ConfigurationSteps.TopicList.Location.Title"] = "Page link location",
+                ["Admin.ConfigurationSteps.TopicList.Location.Text"] = "As you can see, this topic is included in the first column of the footer.",
+                ["Admin.ConfigurationSteps.TopicList.Edit.Title"] = "Edit the page",
+                ["Admin.ConfigurationSteps.TopicList.Edit.Text"] = "To edit this page, click the <b>Edit</b> button. You can also create a new topic by clicking the <b>Add new</b> button at the top of the page.",
             }).Wait();
 
             // rename locales
