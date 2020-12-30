@@ -399,8 +399,19 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.ConfigurationSteps.Store.Url.Text"] = "Enter your store URL in this field. For example, it could be http://www.yourstore.com/ or https://www.yourstore.com/mystore/ if you installed your store in a subdirectory.",
                 ["Admin.ConfigurationSteps.Store.Ssl.Title"] = "Enable SSL",
                 ["Admin.ConfigurationSteps.Store.Ssl.Text"] = "If you already have an SSL certificate installed on the server, enable SSL to protect your customers\' data. <b>Do not enable it if you don\'t have an SSL certificate installed yet!</b> SSL Certificates provide customer trust and improve site rankings. Note that some online payment methods require an SSL certificate installed for correct working. Read how to install and configure SSL certification <a href=\\\"https://docs.nopcommerce.com/getting-started/advanced-configuration/how-to-install-and-configure-ssl-certification.html\\\" target=\\\"_blank\\\">here</a>.",
-                [""] = "",
-                [""] = "",
+
+
+                ["Admin.ConfigurationSteps.TaxManual.Switch.Title"] = "\\\"Fixed rate/By country\\\" switch",
+                ["Admin.ConfigurationSteps.TaxManual.Switch.Text"] = "The \\\"Fixed rate/By country\\\" switch allows you to choose the type of tax rates you\'d like to use in your store.",
+                ["Admin.ConfigurationSteps.TaxManual.Fixed.Title"] = "\\\"Fixed rate\\\" option",
+                ["Admin.ConfigurationSteps.TaxManual.Fixed.Text"] = "The \\\"Fixed tax rate\\\" option allows you to set tax rates depending on the tax category.",
+                ["Admin.ConfigurationSteps.TaxManual.ByCountry.Title"] = "\\\"By country\\\" option",
+                ["Admin.ConfigurationSteps.TaxManual.ByCountry.Text"] = "The tax rates \\\"By country/state/zip\\\" option allows setting different tax rates based on a country, state, or zip.",
+                ["Admin.ConfigurationSteps.TaxManual.Categories.Title"] = "Tax categories",
+                ["Admin.ConfigurationSteps.TaxManual.Categories.Text"] = "This table contains tax categories used by offline tax providers. A few tax categories are created automatically during the installation process.",
+                ["Admin.ConfigurationSteps.TaxManual.Edit.Title"] = "Edit tax rate",
+                ["Admin.ConfigurationSteps.TaxManual.Edit.Text"] = "Click the <b>Edit</b> button to edit a tax rate for the specific tax category.",
+
                 [""] = "",
                 [""] = "",
                 [""] = "",

@@ -61,8 +61,8 @@
 
     //'Fixed Rate/By country' switch steps
     tour.addStep({
-      title: 'Fixed rate/By country switch',
-      text: 'The <b>Fixed rate/By country switch</b> allows you to choose the type of tax rates you\'d like to use in your store <br> <i>*We set this switch to the "Fixed rate" value and disabled for the guide purposes</i>',
+      title: LocalResourcesProvider.localized_data.TaxManualSwitchTitle,
+      text: LocalResourcesProvider.localized_data.TaxManualSwitchText,
       canClickTarget: false,
       attachTo: {
         element: '.onoffswitch',
@@ -72,8 +72,8 @@
     });
 
     tour.addStep({
-      title: '"Fixed rate" option',
-      text: 'The <b>fixed tax rate</b> option allows you to set tax rates depending on tax category',
+      title: LocalResourcesProvider.localized_data.TaxManualFixedTitle,
+      text: LocalResourcesProvider.localized_data.TaxManualFixedText,
       attachTo: {
         element: '.onoffswitch',
         on: 'bottom'
@@ -82,8 +82,8 @@
     });
 
     tour.addStep({
-      title: '"By country" option',
-      text: 'The tax rates <b>by country/state/zip</b> option allow setting different tax rates based on a country, state or zip',
+      title: LocalResourcesProvider.localized_data.TaxManualByCountryTitle,
+      text: LocalResourcesProvider.localized_data.TaxManualByCountryText,
       attachTo: {
         element: '.onoffswitch',
         on: 'bottom'
@@ -93,8 +93,8 @@
 
     //'Tax categories' step
     tour.addStep({
-      title: 'Tax categories',
-      text: 'This table contains tax categories used by offline tax providers. There are a few tax categories created automatically during the installation process',
+      title: LocalResourcesProvider.localized_data.TaxManualCategoriesTitle,
+      text: LocalResourcesProvider.localized_data.TaxManualCategoriesText,
       attachTo: {
         element: '#tax-categories-grid_wrapper',
         on: 'bottom'
@@ -107,8 +107,8 @@
 
     if ($('#' + firstEditButtonId).length) {
       tour.addStep({
-        title: 'Edit tax rate',
-        text: 'Click the <b>Edit</b> button to edit a tax rate for the certain tax category',
+        title: LocalResourcesProvider.localized_data.TaxManualEditTitle,
+        text: LocalResourcesProvider.localized_data.TaxManualEditText,
         attachTo: {
           element: '#' + firstEditButtonId,
           on: 'bottom'
