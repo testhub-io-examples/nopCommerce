@@ -12,9 +12,35 @@
     {
         Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
         Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+        Html.AppendScriptParts("~/js/admintour/admin.tour.localresources.provider.js");
         Html.AppendScriptParts("~/js/admintour/admin.tour.taxproviders.js");
 
         editQueryString = "?showtour=true";
+
+        <script asp-location="Footer">
+            var localized_data = {
+                Back: "@T("Admin.ConfigurationSteps.Back")",
+                Next: "@T("Admin.ConfigurationSteps.Next")",
+                Done: "@T("Admin.ConfigurationSteps.Done")",
+
+                TaxProvidersTaxProvidersTitle: "@T("Admin.ConfigurationSteps.TaxProviders.TaxProviders.Title")",
+                TaxProvidersTaxProvidersText: "@T("Admin.ConfigurationSteps.TaxProviders.TaxProviders.Text")",
+
+                TaxProvidersAvalaraTitle: "@T("Admin.ConfigurationSteps.TaxProviders.Avalara.Title")",
+                TaxProvidersAvalaraText: "@T("Admin.ConfigurationSteps.TaxProviders.Avalara.Text")",
+
+                TaxProvidersManualTitle: "@T("Admin.ConfigurationSteps.TaxProviders.Manual.Title")",
+                TaxProvidersManualText: "@T("Admin.ConfigurationSteps.TaxProviders.Manual.Text")",
+
+                TaxProvidersPrimaryProviderTitle: "@T("Admin.ConfigurationSteps.TaxProviders.PrimaryProvider.Title")",
+                TaxProvidersPrimaryProviderText: "@T("Admin.ConfigurationSteps.TaxProviders.PrimaryProvider.Text")",
+
+                TaxProvidersConfigureTitle: "@T("Admin.ConfigurationSteps.TaxProviders.Configure.Title")",
+                TaxProvidersConfigureText: "@T("Admin.ConfigurationSteps.TaxProviders.Configure.Text")",
+            };
+
+            LocalResourcesProvider.init(localized_data);
+        </script>
     }
 }
 

@@ -70,8 +70,8 @@
     }
 
     tour.addStep({
-      title: 'Tax providers',
-      text: 'On this page you can see all the tax providers (plugins) which allowed to use in your store. But you can always find much more in our <a href="https://www.nopcommerce.com/extensions?category=taxes" target="_blank">marketplace</a>',
+      title: LocalResourcesProvider.localized_data.TaxProvidersTaxProvidersTitle,
+      text: LocalResourcesProvider.localized_data.TaxProvidersTaxProvidersText,
       attachTo: {
         element: '#tax-providers-area',
         on: 'bottom'
@@ -82,8 +82,8 @@
     //'Avalara tax provider' step
     if (avalaraMethodExists) {
       tour.addStep({
-        title: 'Avalara tax provider',
-        text: 'You can automate tax compliance in your store. Set up the <b>Avalara tax provider</b> and you won\'t need to worry about taxes anymore. Avalara is software for automated tax compliance. Read how to configure it in <a href="https://docs.nopcommerce.com/getting-started/configure-taxes/tax-providers/avalara.html" target="_blank">this article</a>',
+        title: LocalResourcesProvider.localized_data.TaxProvidersAvalaraTitle,
+        text: LocalResourcesProvider.localized_data.TaxProvidersAvalaraText,
         attachTo: {
           element: '#' + avalaraMethodRowId,
           on: 'bottom'
@@ -95,8 +95,8 @@
     //'Manual tax provider' step
     if (manualMethodExists) {
       tour.addStep({
-        title: 'Manual tax provider',
-        text: '<b>Manual tax provider</b> allows you to set up fixed tax rates depending on country/state/zip',
+        title: LocalResourcesProvider.localized_data.TaxProvidersManualTitle,
+        text: LocalResourcesProvider.localized_data.TaxProvidersManualText,
         attachTo: {
           element: '#' + manualMethodRowId,
           on: 'bottom'
@@ -108,8 +108,8 @@
     //'Mark as a primary provider' step
     if (manualMethodExists) {
       tour.addStep({
-        title: 'Mark as a primary provider',
-        text: 'You can mark the desired tax provider as a primary one using the <b>Mark as primary provider</b> button',
+        title: LocalResourcesProvider.localized_data.TaxProvidersPrimaryProviderTitle,
+        text: LocalResourcesProvider.localized_data.TaxProvidersPrimaryProviderText,
         attachTo: {
           element: '#' + manualMethodRowId + ' .column-primary .btn',
           on: 'bottom'
@@ -121,8 +121,8 @@
     //Redirect to Manual
     if (manualMethodExists) {
       tour.addStep({
-        title: 'Configure Manual',
-        text: 'Now we\'ll configure the <b>Manual</b> tax provider. Click this button to proceed to the plugin configuration page',
+        title: LocalResourcesProvider.localized_data.TaxProvidersConfigureTitle,
+        text: LocalResourcesProvider.localized_data.TaxProvidersConfigureText,
         attachTo: {
           element: '#' + manualMethodRowId + ' .column-configure .btn-default',
           on: 'bottom'
