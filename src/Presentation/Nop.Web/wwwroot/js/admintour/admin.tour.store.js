@@ -56,8 +56,8 @@
 
   //'Your store name' step
   tour.addStep({
-    title: 'Your store name',
-    text: 'In this field, enter your store name. For example, the store name will be displayed in newsletter and notification emails sent to your customers',
+    title: LocalResourcesProvider.localized_data.StoreNameTitle,
+    text: LocalResourcesProvider.localized_data.StoreNameText,
     attachTo: {
       element: '#store-name-area',
       on: 'bottom'
@@ -67,8 +67,8 @@
 
   //'Your store URL' step
   tour.addStep({
-    title: 'Your store URL',
-    text: 'In this field, enter your store URL. For example, it could be http://www.yourstore.com/ or https://www.yourstore.com/mystore/ if you installed your store in a subdirectory',
+    title: LocalResourcesProvider.localized_data.StoreUrlTitle,
+    text: LocalResourcesProvider.localized_data.StoreUrlText,
     attachTo: {
       element: '#store-url-area',
       on: 'bottom'
@@ -78,8 +78,8 @@
 
   //'Enable SSL' step
   tour.addStep({
-    title: 'Enable SSL',
-    text: 'If you already have an SSL certificate installed on the server, enable SSL to protect your customers’ data. But <b>do not enable it if you don’t have an SSL certificate installed yet</b>! SSL Certificates provide customer trust and improve site rankings. Note, that some online payment methods require an SSL certificate installed for correct working. Read how to install and configure SSL certification <a href="https://docs.nopcommerce.com/getting-started/advanced-configuration/how-to-install-and-configure-ssl-certification.html" target="_blank">here</a>.',
+    title: LocalResourcesProvider.localized_data.StoreSslTitle,
+    text: LocalResourcesProvider.localized_data.StoreSslText,
     attachTo: {
       element: '#ssl-area',
       on: 'bottom'
