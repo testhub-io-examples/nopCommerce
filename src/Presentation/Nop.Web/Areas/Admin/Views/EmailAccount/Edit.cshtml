@@ -11,7 +11,45 @@
     {
         Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
         Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+        Html.AppendScriptParts("~/js/admintour/admin.tour.localresources.provider.js");
         Html.AppendScriptParts("~/js/admintour/admin.tour.emailaccount.js");
+
+    <script asp-location="Footer">
+            var localized_data = {
+                Back: '@T("Admin.ConfigurationSteps.Back")',
+                Next: '@T("Admin.ConfigurationSteps.Next")',
+                Done: '@T("Admin.ConfigurationSteps.Done")',
+
+                EmailAccountsEmailAddressTitle: '@T("Admin.ConfigurationSteps.EmailAccounts.EmailAddress.Title")',
+                EmailAccountsEmailAddressText: '@T("Admin.ConfigurationSteps.EmailAccounts.EmailAddress.Text")',
+
+                EmailAccountsDisplayNameTitle: '@T("Admin.ConfigurationSteps.EmailAccounts.DisplayName.Title")',
+                EmailAccountsDisplayNameText: '@T("Admin.ConfigurationSteps.EmailAccounts.DisplayName.Text")',
+
+                EmailAccountsHostTitle: '@T("Admin.ConfigurationSteps.EmailAccounts.Host.Title")',
+                EmailAccountsHostText: '@T("Admin.ConfigurationSteps.EmailAccounts.Host.Text")',
+
+                EmailAccountsPortTitle: '@T("Admin.ConfigurationSteps.EmailAccounts.Port.Title")',
+                EmailAccountsPortText: '@T("Admin.ConfigurationSteps.EmailAccounts.Port.Text")',
+
+                EmailAccountsUsernameTitle: '@T("Admin.ConfigurationSteps.EmailAccounts.Username.Title")',
+                EmailAccountsUsernameText: '@T("Admin.ConfigurationSteps.EmailAccounts.Username.Text")',
+
+                EmailAccountsPasswordTitle: '@T("Admin.ConfigurationSteps.EmailAccounts.Password.Title")',
+                EmailAccountsPasswordText: '@T("Admin.ConfigurationSteps.EmailAccounts.Password.Text")',
+
+                EmailAccountsUseSslTitle: '@T("Admin.ConfigurationSteps.EmailAccounts.UseSsl.Title")',
+                EmailAccountsUseSslText: '@T("Admin.ConfigurationSteps.EmailAccounts.UseSsl.Text")',
+
+                EmailAccountsDefaultCredentialsTitle: '@T("Admin.ConfigurationSteps.EmailAccounts.DefaultCredentials.Title")',
+                EmailAccountsDefaultCredentialsText: '@T("Admin.ConfigurationSteps.EmailAccounts.DefaultCredentials.Text")',
+
+                EmailAccountsTestEmailTitle: '@T("Admin.ConfigurationSteps.EmailAccounts.TestEmail.Title")',
+                EmailAccountsTestEmailText: '@T("Admin.ConfigurationSteps.EmailAccounts.TestEmail.Text")',
+            };
+
+            LocalResourcesProvider.init(localized_data);
+    </script>
     }
 }
 

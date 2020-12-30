@@ -1,19 +1,19 @@
 ﻿@model GeneralCommonSettingsModel
 
 @{
-  var showTour = ViewBag.showtour ?? false;
-  if (showTour)
-  {
-      Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
-      Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
-      Html.AppendScriptParts("~/js/admintour/admin.tour.localresources.provider.js");
-      Html.AppendScriptParts("~/js/admintour/admin.tour.generalsettings.js");
+    var showTour = ViewBag.showtour ?? false;
+    if (showTour)
+    {
+        Html.AppendCssFileParts("~/lib_npm/shepherd.js/css/shepherd.css");
+        Html.AppendScriptParts("~/lib_npm/shepherd.js/js/shepherd.min.js");
+        Html.AppendScriptParts("~/js/admintour/admin.tour.localresources.provider.js");
+        Html.AppendScriptParts("~/js/admintour/admin.tour.generalsettings.js");
 
         <script asp-location="Footer">
-        var localized_data = {
+            var localized_data = {
                 Back: '@T("Admin.ConfigurationSteps.Back")',
-            Next: '@T("Admin.ConfigurationSteps.Next")',
-            Done: '@T("Admin.ConfigurationSteps.Done")',
+                Next: '@T("Admin.ConfigurationSteps.Next")',
+                Done: '@T("Admin.ConfigurationSteps.Done")',
 
                 PersonalizeStoreIntroTitle: '@T("Admin.ConfigurationSteps.PersonalizeStore.Intro.Title")',
                 PersonalizeStoreIntroText: '@T("Admin.ConfigurationSteps.PersonalizeStore.Intro.Text")',
@@ -27,10 +27,11 @@
                 PersonalizeStoreLogoTitle: '@T("Admin.ConfigurationSteps.PersonalizeStore.Logo.Title")',
                 PersonalizeStoreLogoText: '@T("Admin.ConfigurationSteps.PersonalizeStore.Logo.Text")',
             };
+
             LocalResourcesProvider.init(localized_data);
         </script>
-      }
-  }
+    }
+}
 
 <div class="card-body">
     <div class="form-group row" id="theme-area">

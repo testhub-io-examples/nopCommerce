@@ -285,16 +285,6 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.System.Log.List.PremiumSupport"] = "Have questions or need help? Get dedicated support from the nopCommerce team with a guaranteed response within 24 hours. Please find more about our premium support services <a href=\"https://www.nopcommerce.com/nopcommerce-premium-support-services?utm_source=admin-panel&utm_medium=menu&utm_campaign=premium_support&utm_content=log-list\" target=\"_blank\">here</a>.",
                 ["Admin.System.Log.PremiumSupport"] = "Have questions or need help? Get dedicated support from the nopCommerce team with a guaranteed response within 24 hours. Please find more about our premium support services <a href=\"https://www.nopcommerce.com/nopcommerce-premium-support-services?utm_source=admin-panel&utm_medium=menu&utm_campaign=premium_support&utm_content=log-details\" target=\"_blank\">here</a>.",
 
-
-
-
-
-
-
-
-
-
-
                 ["Admin.ConfigurationSteps"] = "Start accepting orders",
                 ["Admin.ConfigurationSteps.Welcome.Title"] = "Welcome to your store!",
                 ["Admin.ConfigurationSteps.Welcome.Text"] = "Can't wait to start accepting orders? Let us show you how to set up your store fast and easy. The steps below describe the most important settings for the online shop. With our tips on each page you will see how clear this process is. You will be ready to start selling immediately after you go through these steps. So good luck!",
@@ -316,12 +306,6 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.ConfigurationSteps.EditServicesInfo.Description"] = "Add info pages describing shipping, return policy and more",
                 ["Admin.ConfigurationSteps.PoweredBy.Title"] = "\"Powered by\" link",
                 ["Admin.ConfigurationSteps.PoweredBy.Description"] = "Remove the \"Powered by nopCommerce\" link from the footer",
-
-
-
-
-
-
                 ["Admin.ConfigurationSteps.Back"] = "Back",
                 ["Admin.ConfigurationSteps.Next"] = "Next",
                 ["Admin.ConfigurationSteps.Done"] = "Done",
@@ -333,9 +317,30 @@ namespace Nop.Web.Framework.Migrations.UpgradeTo440
                 ["Admin.ConfigurationSteps.PersonalizeStore.Theme.Text"] = "On this page, you can set up your store theme. After you choose a theme on our <a href=\"https://www.nopcommerce.com/marketplace\" target=\"_blank\">marketplace</a>, upload it on your site following <a href=\"https://docs.nopcommerce.com/getting-started/design-your-store/choose-and-install-a-theme.html\"  target=\"_blank\">these instructions</a>. Then refresh this page, and you will see all the available themes. Choose one and click the <b>Save</b> button in the top right.",
                 ["Admin.ConfigurationSteps.PersonalizeStore.Logo.Title"] = "Upload your logo",
                 ["Admin.ConfigurationSteps.PersonalizeStore.Logo.Text"] = "In this field, click the <b>Upload a file</b> button, then choose your logo file.",
-                [""] = "",
-                [""] = "",
-                [""] = "",
+                ["Admin.ConfigurationSteps.EmailAccounts.EmailAddress.Title"] = "Email address",
+                ["Admin.ConfigurationSteps.EmailAccounts.EmailAddress.Text"] = "Enter the \"from\" email address for all outgoing emails of your store. Example: sales@yourstore.com",
+                ["Admin.ConfigurationSteps.EmailAccounts.DisplayName.Title"] = "Email display name",
+                ["Admin.ConfigurationSteps.EmailAccounts.DisplayName.Text"] = "Enter the displayed name for outgoing emails of your store. For example, \"Your store sales department\".",
+                ["Admin.ConfigurationSteps.EmailAccounts.Host.Title"] = "Host",
+                ["Admin.ConfigurationSteps.EmailAccounts.Host.Text"] = "This is the host name or IP address of your mail server. You can normally find this out from your ISP or web host.",
+                ["Admin.ConfigurationSteps.EmailAccounts.Port.Title"] = "Port",
+                ["Admin.ConfigurationSteps.EmailAccounts.Port.Text"] = "Enter the SMTP port of your email server. This is usually port 25.",
+                ["Admin.ConfigurationSteps.EmailAccounts.Username.Title"] = "Username",
+                ["Admin.ConfigurationSteps.EmailAccounts.Username.Text"] = "Enter the user name which is used to authenticate to your email server.",
+                ["Admin.ConfigurationSteps.EmailAccounts.Password.Title"] = "Password",
+                ["Admin.ConfigurationSteps.EmailAccounts.Password.Text"] = "This is the password you use to authenticate to your mail server.",
+                ["Admin.ConfigurationSteps.EmailAccounts.UseSsl.Title"] = "Use SSL",
+                ["Admin.ConfigurationSteps.EmailAccounts.UseSsl.Text"] = "Check to use Secure Sockets Layer (SSL) to encrypt the SMTP connection.",
+                ["Admin.ConfigurationSteps.EmailAccounts.DefaultCredentials.Title"] = "Use default credentials",
+                ["Admin.ConfigurationSteps.EmailAccounts.DefaultCredentials.Text"] = "Check to use default credentials for the connection.",
+                ["Admin.ConfigurationSteps.EmailAccounts.TestEmail.Title"] = "Send test email",
+                ["Admin.ConfigurationSteps.EmailAccounts.TestEmail.Text"] = "Enter your email address and send a test email to make sure you set the email account right.",
+
+
+
+
+
+
                 [""] = "",
                 [""] = "",
                 [""] = "",
