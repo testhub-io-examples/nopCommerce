@@ -4242,6 +4242,441 @@
   <LocaleResource Name="Admin.Common.ZipFile">
     <Value>Zip file</Value>
   </LocaleResource>
+
+  <LocaleResource Name="Admin.ConfigurationSteps">
+    <Value>Start accepting orders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Welcome.Title">
+    <Value>Welcome to your store!</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Welcome.Text">
+    <Value>Can't wait to start accepting orders? Let us show you how to set up your store fast and easy. The steps below describe the most important settings for the online shop. With our tips on each page you will see how clear this process is. You will be ready to start selling immediately after you go through these steps. So good luck!</Value>
+  </LocaleResource>
+   <LocaleResource Name="Admin.ConfigurationSteps.PersonalizeStore.Title">
+    <Value>Personalize your store</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PersonalizeStore.Description">
+    <Value>Choose a beautiful theme for your store and add your logo</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.AddStoreInfo.Title">
+    <Value>Add your store info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.AddStoreInfo.Description">
+    <Value>Enter your store details and protect your customers using SSL</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.SetUpShipping.Title">
+    <Value>Set up shipping</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.SetUpShipping.Description">
+    <Value>Set up shipping methods to deliver orders to customers</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.SetUpPayments.Title">
+    <Value>Set up payments</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.SetUpPayments.Description">
+    <Value>Choose how your customers will pay for their orders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.SetUpTaxes.Title">
+    <Value>Set up taxes</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.SetUpTaxes.Description">
+    <Value>Configure rates manually or choose a tax service to automate all tax things</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.CreateProducts.Title">
+    <Value>Create products</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.CreateProducts.Description">
+    <Value>Build a catalog with attractive product descriptions and pictures</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.CreateEmailAccounts.Title">
+    <Value>Set up email accounts</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.CreateEmailAccounts.Description">
+    <Value>It allows you to send notifications to your customers</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EditServicesInfo.Title">
+    <Value>Edit services info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EditServicesInfo.Description">
+    <Value>Add info pages describing shipping, return policy and more</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PoweredBy.Title">
+    <Value>\"Powered by\" link</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PoweredBy.Description">
+    <Value>Remove the \"Powered by nopCommerce\" link from the footer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Back">
+    <Value>Back</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Next">
+    <Value>Next</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Done">
+    <Value>Done</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PersonalizeStore.Intro.Title">
+    <Value>Configuration tour</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PersonalizeStore.Intro.Text">
+    <Value>Let us help you to configure your store! We will share a few tips, describing the most important fields for the initial configuration.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PersonalizeStore.BasicAdvanced.Title">
+    <Value>\"Basic/Advanced\" modes</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PersonalizeStore.BasicAdvanced.Text">
+    <Value><![CDATA[This two-position <b>Basic/Advanced</b> switch allows you to switch between the page display modes. For convenience of use, the most frequent settings are shown in the Basic mode. If you cannot find a required setting on a page, switch to the Advanced mode to see all the available settings.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PersonalizeStore.Theme.Title">
+    <Value>Choose a theme</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PersonalizeStore.Theme.Text">
+    <Value><![CDATA[On this page, you can set up your store theme. After you choose a theme on our <a href=\"https://www.nopcommerce.com/marketplace\" target=\"_blank\">marketplace</a>, upload it on your site following <a href=\"https://docs.nopcommerce.com/getting-started/design-your-store/choose-and-install-a-theme.html\"  target=\"_blank\">these instructions</a>. Then refresh this page, and you will see all the available themes. Choose one and click the <b>Save</b> button in the top right.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PersonalizeStore.Logo.Title">
+    <Value>Upload your logo</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PersonalizeStore.Logo.Text">
+    <Value><![CDATA[In this field, click the <b>Upload a file</b> button, then choose your logo file.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.EmailAddress.Title">
+    <Value>Email address</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.EmailAddress.Text">
+    <Value>Enter the \"from\" email address for all outgoing emails of your store. Example: sales@yourstore.com</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.DisplayName.Title">
+    <Value>Email display name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.DisplayName.Text">
+    <Value>Enter the displayed name for outgoing emails of your store. For example, \"Your store sales department\".</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.Host.Title">
+    <Value>Host</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.Host.Text">
+    <Value>This is the host name or IP address of your mail server. You can normally find this out from your ISP or web host.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.Port.Title">
+    <Value>Port</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.Port.Text">
+    <Value>Enter the SMTP port of your email server. This is usually port 25.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.Username.Title">
+    <Value>Username</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.Username.Text">
+    <Value>Enter the user name which is used to authenticate to your email server.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.Password.Title">
+    <Value>Password</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.Password.Text">
+    <Value>This is the password you use to authenticate to your mail server.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.UseSsl.Title">
+    <Value>Use SSL</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.UseSsl.Text">
+    <Value>Check to use Secure Sockets Layer (SSL) to encrypt the SMTP connection.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.DefaultCredentials.Title">
+    <Value>Use default credentials</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.DefaultCredentials.Text">
+    <Value>Check to use default credentials for the connection.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.TestEmail.Title">
+    <Value>Send test email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccount.TestEmail.Text">
+    <Value>Enter your email address and send a test email to make sure you set the email account right.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccountList.EmailAccounts1.Title">
+    <Value>Email accounts</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccountList.EmailAccounts1.Text">
+    <Value>You can see all the existing email accounts on this page. Only one email account is created automatically during the installation process. You can also create a general contact email, a sales representative email, a customer support email, and more to contact your customers.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccountList.EmailAccounts2.Title">
+    <Value>Email accounts</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccountList.EmailAccounts2.Text">
+    <Value>Then, these email accounts will be used to send order notifications, registration emails, and newsletters to your customers. But you may as well use only one email account for all these purposes.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccountList.DefaultEmailAccount.Title">
+    <Value>Default email account</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccountList.DefaultEmailAccount.Text">
+    <Value>Don\'t forget to mark one of the existing email accounts as the default one.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccountList.Edit.Title">
+    <Value>Edit an email account</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.EmailAccountList.Edit.Text">
+    <Value><![CDATA[To edit an email account click the <b>Edit</b> button.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PaymentMethods.PaymentMethods.Title">
+    <Value>Payment methods</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PaymentMethods.PaymentMethods.Text">
+    <Value>You can see all the payment methods (plugins) allowed to use in your store on this page. However, you can always find much more in our marketplace.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PaymentMethods.CheckMoney.Title">
+    <Value>Check/money order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PaymentMethods.CheckMoney.Text">
+    <Value>Check/money orders are often used by government agencies or large businesses. Rather than paying directly through your site, shoppers will request that you send them a Purchase order (PO), and they will send the payment back. Most of the order processing is handled outside of the software. This method is already enabled.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PaymentMethods.Manual.Title">
+    <Value>Credit card (manual)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PaymentMethods.Manual.Text">
+    <Value><![CDATA[This is a special payment plugin that allows all orders to be successfully entered on the website, but it does NOT really charge a customer or make any calls to any live payment gateway. This payment method is recommended if you want to perform one of the following: <ul><li>Process all orders offline</li><li>Process them manually via another back-office system</li><li>Test the site end-to-end before going live</li></ul>]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PaymentMethods.PayPal.Title">
+    <Value>PayPal Smart Payment Buttons</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PaymentMethods.PayPal.Text">
+    <Value><![CDATA[If you want to process payments online, we'd recommend you to set up the PayPal Smart Payment Buttons payment method. PayPal Checkout with Smart Payment Buttons gives your buyers a simplified and secure checkout experience. Read more about how to set this plugin <a href=\\\"https://docs.nopcommerce.com/getting-started/configure-payments/payment-methods/paypal-smart-payment-buttons.html\\\" target=\\\"_blank\\\">here</a>.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PaymentMethods.Configure.Title">
+    <Value>Configure a payment method</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.PaymentMethods.Configure.Text">
+    <Value><![CDATA[You can configure each payment method by clicking the appropriate <b>Configure</b> button.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Product.SettingsButton.Title">
+    <Value>\\\"Settings\\\" button</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Product.SettingsButton.Text">
+    <Value>This \\\"Settings\\\" button allows you to set up the basic mode to choose which fields you want to be shown exactly on the product edit page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Product.Details.Title">
+    <Value>Product details</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Product.Details.Text">
+    <Value><![CDATA[Enter the relevant product details in these fields. The screenshot below shows how they will be displayed on the product page with the default nopCommerce theme: <div><img src=\\\"../../js/admintour/images/product-page.jpg\\\"/></div>]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Product.Price.Title">
+    <Value>Product price</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Product.Price.Text">
+    <Value><![CDATA[Enter the product price in a predefined currency here. Read more on how to manage currencies <a href=\\\"https://docs.nopcommerce.com/getting-started/configure-payments/advanced-configuration/currencies.html\\\" target=\\\"_blank\\\">here</a>.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Product.Tax.Title">
+    <Value>Product tax category</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Product.Tax.Text">
+    <Value><![CDATA[Select the product tax category or tick the <b>Tax exempt</b> if needed.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Product.Shipping.Title">
+    <Value>Product shipping info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Product.Shipping.Text">
+    <Value>Define product-specific shipping details in this panel.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Product.Inventory.Title">
+    <Value>Product inventory</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Product.Inventory.Text">
+    <Value><![CDATA[Enter the product inventory info here. <br> <ul><li>The <b>Don\'t track inventory</b> option allows you to opt for no tracking</li><li>The <b>Track inventory</b> option is for those who don\'t have product variants and need to know just how many items are left</li><li>The <b>Track inventory by product attributes</b> option is best for you if you have different product attributes combinations and need to track their stock quantities</li></ul>]]></Value>
+    </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Product.Pictures.Title">
+    <Value>Product pictures</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Product.Pictures.Text">
+    <Value><![CDATA[You can add pictures to your product after you save it for the first time. Click the <b>Save</b> button in the top right and then proceed to the pictures panel.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ConfigureManual.Switch.Title">
+    <Value>\\\"Fixed rate/By weight\\\" switch</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ConfigureManual.Switch.Text">
+    <Value>The \\\"Fixed rate/By weight\\\" switch allows you to choose the type of shipping rates you\'d like to use in your store.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ConfigureManual.FixedRate.Title">
+    <Value>\\\"Fixed rate\\\" option</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ConfigureManual.FixedRate.Text">
+    <Value>The fixed shipping rate option allows you to set shipping cost depending on the shipping method.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ConfigureManual.ByWeight.Title">
+    <Value>\\\"By weight\\\" option</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ConfigureManual.ByWeight.Text">
+    <Value>The shipping by weight and by total options allow setting different shipping fees based on shipment weight and total.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ConfigureManual.Methods.Title">
+    <Value>Shipping methods</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ConfigureManual.Methods.Text">
+    <Value>This table contains shipping methods used by offline shipping providers. A few shipping methods are created automatically during the installation process.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ConfigureManual.Edit.Title">
+    <Value>Edit rate</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ConfigureManual.Edit.Text">
+    <Value>Click the <b>Edit</b> button to edit a rate for a specific shipping method.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ConfigureManual.Manage.Title">
+    <Value>Manage shipping methods</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ConfigureManual.Manage.Text">
+    <Value>Using this button, you can add new shipping methods or delete the existing ones.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ShippingProviders.Providers.Title">
+    <Value>Shipping providers</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ShippingProviders.Providers.Text">
+    <Value><![CDATA[You can see all the shipping providers (plugins) allowed to use in your store on this page. However, you can always find much more in our <a href=\\\"https://www.nopcommerce.com/extensions?category=shipping-delivery\\\" target=\\\"_blank\\\">marketplace</a>.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ShippingProviders.Manual.Title">
+    <Value>Manual shipping provider</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ShippingProviders.Manual.Text">
+    <Value><![CDATA[The only active shipping plugin by default is <b>Manual</b>. This provider allows you to configure shipping methods and rates manually.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ShippingProviders.ShipStation.Title">
+    <Value>ShipStation</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ShippingProviders.ShipStation.Text">
+    <Value><![CDATA[If you want to provide more accurate shipping rates, we recommend using shipping services such as ShipStation. Read how to configure it in <a href=\\\"https://docs.nopcommerce.com/getting-started/configure-shipping/shipping-providers/shipstation.html\\\" target=\\\"_blank\\\">this article</a>.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ShippingProviders.Configure.Title">
+    <Value>Configure Manual</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.ShippingProviders.Configure.Text">
+    <Value>Now we\'ll configure the Manual shipping provider. Click this button to proceed to the plugin configuration page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Store.Name.Title">
+    <Value>Your store name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Store.Name.Text">
+    <Value>Enter your store name in this field. It will be displayed, for instance, in the newsletter and notification emails sent to your customers.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Store.Url.Title">
+    <Value>Your store URL</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Store.Url.Text">
+    <Value>Enter your store URL in this field. For example, it could be http://www.yourstore.com/ or https://www.yourstore.com/mystore/ if you installed your store in a subdirectory.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Store.Ssl.Title">
+    <Value>Enable SSL</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Store.Ssl.Text">
+    <Value><![CDATA[If you already have an SSL certificate installed on the server, enable SSL to protect your customers\' data. <b>Do not enable it if you don\'t have an SSL certificate installed yet!</b> SSL Certificates provide customer trust and improve site rankings. Note that some online payment methods require an SSL certificate installed for correct working. Read how to install and configure SSL certification <a href=\\\"https://docs.nopcommerce.com/getting-started/advanced-configuration/how-to-install-and-configure-ssl-certification.html\\\" target=\\\"_blank\\\">here</a>]]>.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxManual.Switch.Title">
+    <Value>\\\"Fixed rate/By country\\\" switch</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxManual.Switch.Text">
+    <Value>The \\\"Fixed rate/By country\\\" switch allows you to choose the type of tax rates you\'d like to use in your store.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxManual.Fixed.Title">
+    <Value>\\\"Fixed rate\\\" option</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxManual.Fixed.Text">
+    <Value>The \\\"Fixed tax rate\\\" option allows you to set tax rates depending on the tax category.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxManual.ByCountry.Title">
+    <Value>\\\"By country\\\" option</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxManual.ByCountry.Text">
+    <Value>The tax rates \\\"By country/state/zip\\\" option allows setting different tax rates based on a country, state, or zip.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxManual.Categories.Title">
+    <Value>Tax categories</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxManual.Categories.Text">
+    <Value>This table contains tax categories used by offline tax providers. A few tax categories are created automatically during the installation process.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxManual.Edit.Title">
+    <Value>Edit tax rate</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxManual.Edit.Text">
+    <Value>Click the <b>Edit</b> button to edit a tax rate for the specific tax category.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxProviders.TaxProviders.Title">
+    <Value>Tax providers</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxProviders.TaxProviders.Text">
+    <Value><![CDATA[You can see all the tax providers (plugins) allowed to use in your store on this page. However, you can always find much more in our <a href=\\\"https://www.nopcommerce.com/extensions?category=taxes\\\" target=\\\"_blank\\\">marketplace</a>.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxProviders.Avalara.Title">
+    <Value>Avalara tax provider</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxProviders.Avalara.Text">
+    <Value><![CDATA[You can automate the tax compliance in your store. Set up the Avalara tax provider, and you won’t need to worry about taxes anymore. Avalara is an automated tax compliance software. Read how to configure it in <a href=\\\"https://docs.nopcommerce.com/getting-started/configure-taxes/tax-providers/avalara.html\\\" target=\\\"_blank\\\">this article</a>.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxProviders.Manual.Title">
+    <Value>Manual tax provider</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxProviders.Manual.Text">
+    <Value>Manual tax provider allows you to set up fixed tax rates depending on the country/state/zip.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxProviders.PrimaryProvider.Title">
+    <Value>Mark as a primary provider</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxProviders.PrimaryProvider.Text">
+    <Value><![CDATA[You can mark the desired tax provider as a primary one using the <b>Mark as primary provider</b> button.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxProviders.Configure.Title">
+    <Value>Configure Manual</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TaxProviders.Configure.Text">
+    <Value><![CDATA[Now we\'ll configure the Manual tax provider. Click the <b>Edit</b> button to proceed to the plugin configuration page.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Topic.TitleContent.Title">
+    <Value><![CDATA[Title and content]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Topic.TitleContent.Text">
+    <Value>Enter a topic (page) title and its content in this field. This is what customers will see in the public store.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Topic.Preview.Title">
+    <Value>Preview the page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.Topic.Preview.Text">
+    <Value><![CDATA[To find out how your customers will see the page, click the <b>Preview</b> button.]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TopicList.Topics1.Title">
+    <Value>Topics (pages)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TopicList.Topics1.Text">
+    <Value>Topics (pages) are free-form content blocks that can be displayed on your site, either embedded within other pages or on their own pages. They are often used for FAQ pages, policy pages, special instructions, and more.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TopicList.Topics2.Title">
+    <Value>Topics (pages)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TopicList.Topics2.Text">
+    <Value>In this table, you can see a list of the topics created by default.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TopicList.Shipping.Title">
+    <Value>Shipping info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TopicList.Shipping.Text">
+    <Value>For example, this is a shipping info topic. It contains shipping information that customers can access by clicking the appropriate link in your store.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TopicList.Location.Title">
+    <Value>Page link location</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TopicList.Location.Text">
+    <Value>As you can see, this topic is included in the first column of the footer.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TopicList.Edit.Title">
+    <Value>Edit the page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ConfigurationSteps.TopicList.Edit.Text">
+    <Value><![CDATA[To edit this page, click the <b>Edit</b> button. You can also create a new topic by clicking the <b>Add new</b> button at the top of the page.]]></Value>
+  </LocaleResource>
+
+  
+  
+  
+  
+  
+  
+  
   <LocaleResource Name="Admin.Configuration">
     <Value>Configuration</Value>
   </LocaleResource>
