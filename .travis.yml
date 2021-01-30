@@ -9,7 +9,7 @@ install:
 script:
 - dotnet build ./src/NopCommerce.sln
 - dotnet test ./src/Tests/Nop.Tests/Nop.Tests.csproj  --logger "junit;LogFilePath=TestResults/test-results.xml" --collect:"XPlat Code Coverage"
-- ./testhub-cli upload -t 2b8310605320d89bca6ba4ab499a443b7ac0e869 --build $TRAVIS_BUILD_NUMBER --project $TRAVIS_REPO_SLUG --pattern TestResults/* 
+- ./testhub-cli upload -t 2b8310605320d89bca6ba4ab499a443b7ac0e869 --build $TRAVIS_BUILD_NUMBER --project $TRAVIS_REPO_SLUG --pattern **/TestResults/*.xml
 - ./testhub-cli uploadCoverage -t 2b8310605320d89bca6ba4ab499a443b7ac0e869 --build $TRAVIS_BUILD_NUMBER --project $TRAVIS_REPO_SLUG --pattern coverage.cobertura.xml 
 notifications:
   slack:
