@@ -5,7 +5,7 @@ dist: xenial
 sudo: required
 install:
 - dotnet restore ./src/NopCommerce.sln
-- curl https://github.com/testhub-io/testhub-cli/releases/download/v0.10/testhub-cli_v0.10_linux_386.tar.gz --output testhub-cli.tar.gz -L && tar -xzf testhub-cli.tar.gz
+- curl https://github.com/testhub-io/testhub-cli/releases/download/v0.13/testhub-cli-v0.13-linux-amd64.tar.gz --output testhub-cli.tar.gz -L && tar -xzf testhub-cli.tar.gz
 script:
 - dotnet build ./src/NopCommerce.sln
 - dotnet test ./src/Tests/Nop.Tests/Nop.Tests.csproj  --logger "junit;LogFilePath=TestResults/test-results.xml" --collect:"XPlat Code Coverage"
