@@ -1,9 +1,8 @@
 ﻿﻿using System.Threading.Tasks;
 using Nop.Core.Domain.Customers;
-﻿using Nop.Core.Caching;
-using Nop.Core.Domain.Orders;
 using Nop.Services.Caching;
 using Nop.Services.Events;
+using Nop.Services.Orders;
 
 namespace Nop.Services.Customers.Caching
 {
@@ -18,6 +17,7 @@ namespace Nop.Services.Customers.Caching
         /// Handle password changed event
         /// </summary>
         /// <param name="eventMessage">Event message</param>
+        /// <returns>A task that represents the asynchronous operation</returns>
         public async Task HandleEventAsync(CustomerPasswordChangedEvent eventMessage)
         {
             await RemoveAsync(NopCustomerServicesDefaults.CustomerPasswordLifetimeCacheKey, eventMessage.Password.CustomerId);
@@ -27,11 +27,12 @@ namespace Nop.Services.Customers.Caching
         /// Clear cache data
         /// </summary>
         /// <param name="entity">Entity</param>
+        /// <returns>A task that represents the asynchronous operation</returns>
         protected override async Task ClearCacheAsync(Customer entity)
         {
-            await RemoveByPrefixAsync(NopCustomerServicesDefaults.CustomerCustomerRolesPrefix);
-            await RemoveByPrefixAsync(NopCustomerServicesDefaults.CustomerAddressesPrefix);
-            await RemoveByPrefixAsync(NopEntityCacheDefaults<ShoppingCartItem>.AllPrefix);
+            await RemoveByPrefixAsync(NopCustomerServicesDefaults.CustomerCustomerRolesByCustomerPrefix, entity);
+            await RemoveByPrefixAsync(NopCustomerServicesDefaults.CustomerAddressesByCustomerPrefix, entity);
+            await RemoveByPrefixAsync(NopOrderDefaults.ShoppingCartItemsByCustomerPrefix, entity);
 
             if (string.IsNullOrEmpty(entity.SystemName))
                 return;

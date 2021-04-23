@@ -80,6 +80,7 @@ namespace Nop.Web.Controllers
         private readonly ILogger _logger;
         private readonly IMultiFactorAuthenticationPluginManager _multiFactorAuthenticationPluginManager;
         private readonly INewsLetterSubscriptionService _newsLetterSubscriptionService;
+        private readonly INotificationService _notificationService;
         private readonly IOrderService _orderService;
         private readonly IPictureService _pictureService;
         private readonly IPriceFormatter _priceFormatter;
@@ -128,6 +129,7 @@ namespace Nop.Web.Controllers
             ILogger logger,
             IMultiFactorAuthenticationPluginManager multiFactorAuthenticationPluginManager,
             INewsLetterSubscriptionService newsLetterSubscriptionService,
+            INotificationService notificationService,
             IOrderService orderService,
             IPictureService pictureService,
             IPriceFormatter priceFormatter,
@@ -172,6 +174,7 @@ namespace Nop.Web.Controllers
             _logger = logger;
             _multiFactorAuthenticationPluginManager = multiFactorAuthenticationPluginManager;
             _newsLetterSubscriptionService = newsLetterSubscriptionService;
+            _notificationService = notificationService;
             _orderService = orderService;
             _pictureService = pictureService;
             _priceFormatter = priceFormatter;
@@ -205,6 +208,7 @@ namespace Nop.Web.Controllers
             }
         }
 
+        /// <returns>A task that represents the asynchronous operation</returns>
         protected virtual async Task<string> ParseSelectedProviderAsync(IFormCollection form)
         {
             if (form == null)
@@ -228,6 +232,7 @@ namespace Nop.Web.Controllers
             return string.Empty;
         }
 
+        /// <returns>A task that represents the asynchronous operation</returns>
         protected virtual async Task<string> ParseCustomCustomerAttributesAsync(IFormCollection form)
         {
             if (form == null)
@@ -307,6 +312,7 @@ namespace Nop.Web.Controllers
             return attributesXml;
         }
 
+        /// <returns>A task that represents the asynchronous operation</returns>
         protected virtual async Task LogGdprAsync(Customer customer, CustomerInfoModel oldCustomerInfoModel,
             CustomerInfoModel newCustomerInfoModel, IFormCollection form)
         {
@@ -434,27 +440,26 @@ namespace Nop.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                if (_customerSettings.UsernamesEnabled && model.Username != null)
-                {
-                    model.Username = model.Username.Trim();
-                }
-                var loginResult = await _customerRegistrationService.ValidateCustomerAsync(_customerSettings.UsernamesEnabled ? model.Username : model.Email, model.Password);
+                var customerUserName = model.Username?.Trim();
+                var customerEmail = model.Email?.Trim();
+                var userNameOrEmail = _customerSettings.UsernamesEnabled ? customerUserName : customerEmail;
+
+                var loginResult = await _customerRegistrationService.ValidateCustomerAsync(userNameOrEmail, model.Password);
                 switch (loginResult)
                 {
                     case CustomerLoginResults.Successful:
                         {
                             var customer = _customerSettings.UsernamesEnabled
-                                ? await _customerService.GetCustomerByUsernameAsync(model.Username)
-                                : await _customerService.GetCustomerByEmailAsync(model.Email);
+                                ? await _customerService.GetCustomerByUsernameAsync(customerUserName)
+                                : await _customerService.GetCustomerByEmailAsync(customerEmail);
 
                             return await _customerRegistrationService.SignInCustomerAsync(customer, returnUrl, model.RememberMe);
                         }
                     case CustomerLoginResults.MultiFactorAuthenticationRequired:
                         {
-                            var userName = _customerSettings.UsernamesEnabled ? model.Username : model.Email;
                             var customerMultiFactorAuthenticationInfo = new CustomerMultiFactorAuthenticationInfo
                             {
-                                UserName = userName,
+                                UserName = userNameOrEmail,
                                 RememberMe = model.RememberMe,
                                 ReturnUrl = returnUrl
                             };
@@ -491,7 +496,10 @@ namespace Nop.Web.Controllers
         /// <summary>
         /// The entry point for injecting a plugin component of type "MultiFactorAuth"
         /// </summary>
-        /// <returns>User verification page for Multi-factor authentication. Served by an authentication provider.</returns>
+        /// <returns>
+        /// A task that represents the asynchronous operation
+        /// The task result contains the user verification page for Multi-factor authentication. Served by an authentication provider.
+        /// </returns>
         public virtual async Task<IActionResult> MultiFactorVerification()
         {
             if (!await _multiFactorAuthenticationPluginManager.HasActivePluginsAsync())
@@ -601,7 +609,7 @@ namespace Nop.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                var customer = await _customerService.GetCustomerByEmailAsync(model.Email);
+                var customer = await _customerService.GetCustomerByEmailAsync(model.Email.Trim());
                 if (customer != null && customer.Active && !customer.Deleted)
                 {
                     //save token and current date
@@ -791,15 +799,13 @@ namespace Nop.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                if (_customerSettings.UsernamesEnabled && model.Username != null)
-                {
-                    model.Username = model.Username.Trim();
-                }
+                var customerUserName = model.Username?.Trim();
+                var customerEmail = model.Email?.Trim();
 
                 var isApproved = _customerSettings.UserRegistrationType == UserRegistrationType.Standard;
                 var registrationRequest = new CustomerRegistrationRequest(customer,
-                    model.Email,
-                    _customerSettings.UsernamesEnabled ? model.Username : model.Email,
+                    customerEmail,
+                    _customerSettings.UsernamesEnabled ? customerUserName : customerEmail,
                     model.Password,
                     _customerSettings.DefaultPasswordFormat,
                     (await _storeContext.GetCurrentStoreAsync()).Id,
@@ -861,13 +867,15 @@ namespace Nop.Web.Controllers
                     //newsletter
                     if (_customerSettings.NewsletterEnabled)
                     {
+                        var isNewsletterActive = _customerSettings.UserRegistrationType != UserRegistrationType.EmailValidation;
+
                         //save newsletter value
-                        var newsletter = await _newsLetterSubscriptionService.GetNewsLetterSubscriptionByEmailAndStoreIdAsync(model.Email, (await _storeContext.GetCurrentStoreAsync()).Id);
+                        var newsletter = await _newsLetterSubscriptionService.GetNewsLetterSubscriptionByEmailAndStoreIdAsync(customerEmail, (await _storeContext.GetCurrentStoreAsync()).Id);
                         if (newsletter != null)
                         {
                             if (model.Newsletter)
                             {
-                                newsletter.Active = true;
+                                newsletter.Active = isNewsletterActive;
                                 await _newsLetterSubscriptionService.UpdateNewsLetterSubscriptionAsync(newsletter);
 
                                 //GDPR
@@ -889,8 +897,8 @@ namespace Nop.Web.Controllers
                                 await _newsLetterSubscriptionService.InsertNewsLetterSubscriptionAsync(new NewsLetterSubscription
                                 {
                                     NewsLetterSubscriptionGuid = Guid.NewGuid(),
-                                    Email = model.Email,
-                                    Active = true,
+                                    Email = customerEmail,
+                                    Active = isNewsletterActive,
                                     StoreId = (await _storeContext.GetCurrentStoreAsync()).Id,
                                     CreatedOnUtc = DateTime.UtcNow
                                 });
@@ -1108,6 +1116,14 @@ namespace Nop.Web.Controllers
             //authenticate customer after activation
             await _customerRegistrationService.SignInCustomerAsync(customer, null, true);
 
+            //activating newsletter if need
+            var newsletter = await _newsLetterSubscriptionService.GetNewsLetterSubscriptionByEmailAndStoreIdAsync(customer.Email, (await _storeContext.GetCurrentStoreAsync()).Id);
+            if (newsletter != null && !newsletter.Active)
+            {
+                newsletter.Active = true;
+                await _newsLetterSubscriptionService.UpdateNewsLetterSubscriptionAsync(newsletter);
+            }
+
             model.Result = await _localizationService.GetResourceAsync("Account.AccountActivation.Activated");
             return View(model);
         }
@@ -1165,10 +1181,11 @@ namespace Nop.Web.Controllers
                     //username 
                     if (_customerSettings.UsernamesEnabled && _customerSettings.AllowUsersToChangeUsernames)
                     {
-                        if (!customer.Username.Equals(model.Username.Trim(), StringComparison.InvariantCultureIgnoreCase))
+                        var userName = model.Username.Trim();
+                        if (!customer.Username.Equals(userName, StringComparison.InvariantCultureIgnoreCase))
                         {
                             //change username
-                            await _customerRegistrationService.SetUsernameAsync(customer, model.Username.Trim());
+                            await _customerRegistrationService.SetUsernameAsync(customer, userName);
 
                             //re-authenticate
                             //do not authenticate users in impersonation mode
@@ -1177,11 +1194,12 @@ namespace Nop.Web.Controllers
                         }
                     }
                     //email
-                    if (!customer.Email.Equals(model.Email.Trim(), StringComparison.InvariantCultureIgnoreCase))
+                    var email = model.Email.Trim();
+                    if (!customer.Email.Equals(email, StringComparison.InvariantCultureIgnoreCase))
                     {
                         //change email
                         var requireValidation = _customerSettings.UserRegistrationType == UserRegistrationType.EmailValidation;
-                        await _customerRegistrationService.SetEmailAsync(customer, model.Email.Trim(), requireValidation);
+                        await _customerRegistrationService.SetEmailAsync(customer, email, requireValidation);
 
                         //do not authenticate users in impersonation mode
                         if (_workContext.OriginalCustomerIfImpersonated == null)
@@ -1560,6 +1578,8 @@ namespace Nop.Web.Controllers
             return View(model);
         }
 
+        //ignore SEO friendly URLs checks
+        [CheckLanguageSeoCode(true)]
         public virtual async Task<IActionResult> UserAgreement(Guid orderItemId)
         {
             var orderItem = await _orderService.GetOrderItemByGuidAsync(orderItemId);
@@ -1609,7 +1629,7 @@ namespace Nop.Web.Controllers
                 var changePasswordResult = await _customerRegistrationService.ChangePasswordAsync(changePasswordRequest);
                 if (changePasswordResult.Success)
                 {
-                    model.Result = await _localizationService.GetResourceAsync("Account.ChangePassword.Success");
+                    _notificationService.SuccessNotification(await _localizationService.GetResourceAsync("Account.ChangePassword.Success"));
                     return View(model);
                 }
 

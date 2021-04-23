@@ -120,7 +120,7 @@ namespace Nop.Web.Controllers
             if (_localizationSettings.SeoFriendlyUrlsForLanguagesEnabled)
             {
                 //remove current language code if it's already localized URL
-                if ((await returnUrl.IsLocalizedUrlAsync(Request.PathBase, true)).Item1)
+                if ((await returnUrl.IsLocalizedUrlAsync(Request.PathBase, true)).IsLocalized)
                     returnUrl = returnUrl.RemoveLanguageSeoCodeFromUrl(Request.PathBase, true);
 
                 //and add code of passed language
@@ -285,6 +285,8 @@ namespace Nop.Web.Controllers
         //SEO sitemap page
         //available even when a store is closed
         [CheckAccessClosedStore(true)]
+        //ignore SEO friendly URLs checks
+        [CheckLanguageSeoCode(true)]
         public virtual async Task<IActionResult> SitemapXml(int? id)
         {
             var siteMap = _sitemapXmlSettings.SitemapXmlEnabled
@@ -330,6 +332,8 @@ namespace Nop.Web.Controllers
         [CheckAccessClosedStore(true)]
         //available even when navigation is not allowed
         [CheckAccessPublicStore(true)]
+        //ignore SEO friendly URLs checks
+        [CheckLanguageSeoCode(true)]
         public virtual async Task<IActionResult> RobotsTextFile()
         {
             var robotsFileContent = await _commonModelFactory.PrepareRobotsTextFileAsync();
