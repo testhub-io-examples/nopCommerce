@@ -395,8 +395,14 @@ namespace Nop.Core.Infrastructure
             if (string.IsNullOrEmpty(searchPattern))
                 searchPattern = "*.*";
 
-            return Directory.GetFiles(directoryPath, searchPattern,
-                topDirectoryOnly ? SearchOption.TopDirectoryOnly : SearchOption.AllDirectories);
+            return Directory.GetFileSystemEntries(directoryPath, searchPattern, 
+                new EnumerationOptions 
+                { 
+                    IgnoreInaccessible = true,
+                    MatchCasing = MatchCasing.CaseInsensitive,
+                    RecurseSubdirectories = !topDirectoryOnly,
+
+                });
         }
 
         /// <summary>
@@ -493,7 +499,10 @@ namespace Nop.Core.Infrastructure
         /// Reads the contents of the file into a byte array
         /// </summary>
         /// <param name="filePath">The file for reading</param>
-        /// <returns>A byte array containing the contents of the file</returns>
+        /// <returns>
+        /// A task that represents the asynchronous operation
+        /// The task result contains a byte array containing the contents of the file
+        /// </returns>
         public virtual async Task<byte[]> ReadAllBytesAsync(string filePath)
         {
             return File.Exists(filePath) ? await File.ReadAllBytesAsync(filePath) : Array.Empty<byte>();
@@ -504,7 +513,10 @@ namespace Nop.Core.Infrastructure
         /// </summary>
         /// <param name="path">The file to open for reading</param>
         /// <param name="encoding">The encoding applied to the contents of the file</param>
-        /// <returns>A string containing all lines of the file</returns>
+        /// <returns>
+        /// A task that represents the asynchronous operation
+        /// The task result contains a string containing all lines of the file
+        /// </returns>
         public virtual async Task<string> ReadAllTextAsync(string path, Encoding encoding)
         {
             await using var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
@@ -526,26 +538,13 @@ namespace Nop.Core.Infrastructure
 
             return streamReader.ReadToEnd();
         }
-
-        //TODO: Delete unused method
-        /// <summary>
-        /// Sets the date and time, in coordinated universal time (UTC), that the specified file was last written to
-        /// </summary>
-        /// <param name="path">The file for which to set the date and time information</param>
-        /// <param name="lastWriteTimeUtc">
-        /// A System.DateTime containing the value to set for the last write date and time of path.
-        /// This value is expressed in UTC time
-        /// </param>
-        public virtual void SetLastWriteTimeUtc(string path, DateTime lastWriteTimeUtc)
-        {
-            File.SetLastWriteTimeUtc(path, lastWriteTimeUtc);
-        }
-
+        
         /// <summary>
         /// Writes the specified byte array to the file
         /// </summary>
         /// <param name="filePath">The file to write to</param>
         /// <param name="bytes">The bytes to write to the file</param>
+        /// <returns>A task that represents the asynchronous operation</returns>
         public virtual async Task WriteAllBytesAsync(string filePath, byte[] bytes)
         {
             await File.WriteAllBytesAsync(filePath, bytes);
@@ -558,6 +557,7 @@ namespace Nop.Core.Infrastructure
         /// <param name="path">The file to write to</param>
         /// <param name="contents">The string to write to the file</param>
         /// <param name="encoding">The encoding to apply to the string</param>
+        /// <returns>A task that represents the asynchronous operation</returns>
         public virtual async Task WriteAllTextAsync(string path, string contents, Encoding encoding)
         {
             await File.WriteAllTextAsync(path, contents, encoding);
