@@ -1,5 +1,5 @@
 # nopCommerce: free and open-source eCommerce solution
- [![Build Status](https://travis-ci.com/nopSolutions/nopCommerce.svg?branch=develop)](https://travis-ci.com/nopSolutions/nopCommerce) &nbsp; [![test-hub](https://api.test-hub.io/api/testhub-io-examples/projects/nopCommerce/badge.svg?branch=develop)](https://test-hub.io/testhub-io-examples/projects/nopCommerce/runs)&nbsp;
+ [![Build Status](https://travis-ci.com/nopSolutions/nopCommerce.svg?branch=develop)](https://travis-ci.com/nopSolutions/nopCommerce) &nbsp; [![test-hub](https://api.test-hub.io/api/nopSolutions/projects/nopCommerce/badge.svg?branch=develop)](https://test-hub.io/nopSolutions/projects/nopCommerce/runs)&nbsp;
 ===========
 
 
